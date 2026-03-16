@@ -19,6 +19,7 @@ Root Variables
     --text-color: #555555;
     --light-color: #f8f8f8;
     --white-color: #ffffff;
+    --bg-color: #F6F3F0;
     --heading-font: "Raleway", sans-serif;
     --titleFontFamily: "Yesteryear", cursive;
     --body-font: "Plus Jakarta Sans", sans-serif;
@@ -846,6 +847,12 @@ section {
     transition: var(--transition);
 }
 
+.curve-shape {
+    position: absolute;
+    bottom: -1px;
+    z-index: 2;
+}
+
 /* ===================================
 Header
 =================================== */
@@ -1414,4 +1421,12 @@ Hero Section
     50% {
         transform: translateY(-8px);
     }
+}
+
+/* ===================================
+About Us Section
+=================================== */
+
+.bg-section {
+    padding: 100px 0 190px;
 }
