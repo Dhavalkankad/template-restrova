@@ -94,3 +94,20 @@ document.getElementById('menu').addEventListener('hide.bs.collapse', function ()
         el.classList.remove('mobile-open');
     });
 });
+
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById('footerScrollTop');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
