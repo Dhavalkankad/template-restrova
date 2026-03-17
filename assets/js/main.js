@@ -71,3 +71,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+// Mobile dropdown accordion
+document.querySelectorAll('.has-dropdown > .nav-link').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+        if (window.innerWidth < 992) {
+            e.preventDefault();
+            var parent = this.closest('.has-dropdown');
+            var isOpen = parent.classList.contains('mobile-open');
+            // Close all
+            document.querySelectorAll('.has-dropdown.mobile-open').forEach(function (el) {
+                el.classList.remove('mobile-open');
+            });
+            // Toggle clicked
+            if (!isOpen) parent.classList.add('mobile-open');
+        }
+    });
+});
+// Close mobile menu dropdowns when menu collapses
+document.getElementById('menu').addEventListener('hide.bs.collapse', function () {
+    document.querySelectorAll('.has-dropdown.mobile-open').forEach(function (el) {
+        el.classList.remove('mobile-open');
+    });
+});
