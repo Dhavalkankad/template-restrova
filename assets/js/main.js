@@ -111,3 +111,196 @@ scrollTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// Loader Logic
+
+// function hidLoader() {
+//     document.getElementById('loader').classList.add('hide');
+//     document.querySelector('.overflow-wrapper').classList.add('show');
+// }
+// const minWait = new Promise(r => setTimeout(r, 2200));
+// const pageLoad = new Promise(r => {
+//     if (document.readyState === 'complete') r();
+//     else window.addEventListener('load', r);
+// });
+// Promise.all([minWait, pageLoad]).then(hidLoader);
+
+
+
+
+
+(function () {
+    'use strict';
+
+    // ── AOS Init ──
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 60,
+        });
+    }
+
+    // ── Loader hide + site reveal ──
+    var loader = document.getElementById('loader');
+    var wrapper = document.querySelector('.overflow-wrapper');
+
+    function hideLoader() {
+        if (loader) loader.classList.add('hide');
+        if (wrapper) wrapper.classList.add('show');
+    }
+
+    var minWait = new Promise(function (r) { setTimeout(r, 2200); });
+    var pageLoad = new Promise(function (r) {
+        if (document.readyState === 'complete') r();
+        else window.addEventListener('load', r);
+    });
+    Promise.all([minWait, pageLoad]).then(hideLoader);
+
+    // ── Loader percentage counter ──
+    // var pctEl = document.getElementById('pct');
+    // if (pctEl) {
+    //     var duration = 2800, start = performance.now();
+    //     function tick(now) {
+    //         var t = Math.min((now - start) / duration, 1);
+    //         var eased = t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    //         pctEl.textContent = Math.round(eased * 100) + '%';
+    //         if (t < 1) requestAnimationFrame(tick);
+    //     }
+    //     setTimeout(function () { requestAnimationFrame(tick); }, 600);
+    // }
+
+    // ── Filter tabs (categories section) ──
+    // document.querySelectorAll('.filter-tab').forEach(function (btn) {
+    //     btn.addEventListener('click', function () {
+    //         document.querySelectorAll('.filter-tab').forEach(function (b) {
+    //             b.classList.remove('active');
+    //         });
+    //         btn.classList.add('active');
+    //     });
+    // });
+
+    // ── Animated counters (stats strip) ──
+    function animCounter(el, target, suffix, dur) {
+        dur = dur || 1800;
+        var s = null;
+        function step(ts) {
+            if (!s) s = ts;
+            var p = Math.min((ts - s) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    var statsStrip = document.querySelector('.stats-strip');
+    if (statsStrip && 'IntersectionObserver' in window) {
+        var statsObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.stat-num[data-target]').forEach(function (el) {
+                        animCounter(el, +el.dataset.target, el.dataset.suffix || '');
+                    });
+                    statsObs.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        statsObs.observe(statsStrip);
+    }
+
+    // ── Filter pills ──
+    // document.querySelectorAll('.filter-pill').forEach(function (btn) {
+    //     if (!btn) return;
+    //     btn.addEventListener('click', function () {
+    //         document.querySelectorAll('.filter-pill').forEach(function (b) { if (b) b.classList.remove('active'); });
+    //         btn.classList.add('active');
+    //     });
+    // });
+
+    // Drag-to-scroll track (flicker-free)
+    var track = document.getElementById('catTrack');
+    if (track) {
+        var isDown = false, startX, scrollLeft, hasDragged = false;
+
+        track.addEventListener('mousedown', function (e) {
+            isDown = true;
+            hasDragged = false;
+            track.classList.add('grabbing');
+            startX = e.pageX;
+            scrollLeft = track.scrollLeft;
+            e.preventDefault(); // block text/image selection immediately
+        });
+
+        // listen on document so drag outside track still works
+        document.addEventListener('mouseup', function () {
+            if (!isDown) return;
+            isDown = false;
+            track.classList.remove('grabbing');
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (!isDown) return;
+            var dx = e.pageX - startX;
+            if (Math.abs(dx) > 4) hasDragged = true;
+            track.scrollLeft = scrollLeft - dx;
+        });
+
+        // swallow click if it was actually a drag
+        track.addEventListener('click', function (e) {
+            if (hasDragged) {
+                e.preventDefault();
+                e.stopPropagation();
+                hasDragged = false;
+            }
+        }, true);
+
+        // Touch drag
+        var touchStartX = 0, touchScrollLeft = 0;
+        track.addEventListener('touchstart', function (e) {
+            touchStartX = e.touches[0].pageX;
+            touchScrollLeft = track.scrollLeft;
+        }, { passive: true });
+        track.addEventListener('touchmove', function (e) {
+            var dx = e.touches[0].pageX - touchStartX;
+            track.scrollLeft = touchScrollLeft - dx;
+        }, { passive: true });
+    }
+
+    // ── Arrow buttons ──
+    var prevBtn = document.getElementById('prevBtn');
+    var nextBtn = document.getElementById('nextBtn');
+    if (prevBtn && track) prevBtn.addEventListener('click', function () { track.scrollBy({ left: -320, behavior: 'smooth' }); });
+    if (nextBtn && track) nextBtn.addEventListener('click', function () { track.scrollBy({ left: 320, behavior: 'smooth' }); });
+
+    // ── Animated counters ──
+    function animCounter(el, target, suffix, dur) {
+        dur = dur || 1800;
+        var s = null;
+        (function step(ts) {
+            if (!s) s = ts;
+            var p = Math.min((ts - s) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+        })(performance.now());
+    }
+
+    var band = document.querySelector('.stats-band');
+    if (band && 'IntersectionObserver' in window) {
+        var sObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                    document.querySelectorAll('.sb-num').forEach(function (el) {
+                        if (el && el.dataset.target) animCounter(el, +el.dataset.target, el.dataset.suffix || '');
+                    });
+                    sObs.disconnect();
+                }
+            });
+        }, { threshold: 0.4 });
+        sObs.observe(band);
+    }
+    
+
+})();

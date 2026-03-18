@@ -42,6 +42,14 @@
         height: 50px;
         font-size: 18px;
     }
+
+    .about-grid {
+        gap: 50px;
+    }
+
+    .about-visual {
+        height: 520px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -311,6 +319,72 @@
         height: 48px;
         font-size: 16px;
     }
+
+    .about-visual {
+        height: 420px;
+        order: -1;
+    }
+
+    .stats-strip {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-section {
+        padding: 70px 0 60px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .about-visual {
+        height: 480px;
+        order: -1;
+    }
+
+    .img-card-1 {
+        width: 195px;
+        height: 255px;
+        left: 5px;
+    }
+
+    .img-card-2 {
+        width: 215px;
+        height: 275px;
+    }
+
+    .img-card-3 {
+        width: 190px;
+        height: 250px;
+        right: 0;
+    }
+
+    .float-card {
+        display: none;
+    }
+
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-section {
+        padding: 80px 0 0;
+    }
+
+    .cat-card {
+        flex: 0 0 240px;
+        height: 340px;
+    }
+
+    .cat-card--wide {
+        flex: 0 0 300px;
+    }
 }
 
 @media only screen and (max-width:600px) {}
@@ -558,5 +632,52 @@
 
     .btn-footer-subscribe {
         padding: 10px;
+    }
+
+    .stats-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-box:not(:last-child)::after {
+        right: auto;
+        bottom: 0;
+        top: auto;
+        left: 20%;
+        right: 20%;
+        width: auto;
+        height: 1px;
+    }
+
+    .mini-card {
+        display: none;
+    }
+
+    .img-card-1,
+    .img-card-3 {
+        display: none;
+    }
+
+    .img-card-2 {
+        width: 260px;
+        height: 320px;
+        transform: translateX(-50%);
+    }
+
+    .about-visual {
+        height: 380px;
+    }
+
+    .cat-track {
+        padding: 16px 24px 24px;
+        gap: 16px;
+    }
+
+    .cat-card {
+        flex: 0 0 220px;
+        height: 310px;
+    }
+
+    .cat-card--wide {
+        flex: 0 0 260px;
     }
 }
