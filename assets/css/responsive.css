@@ -3,9 +3,86 @@
     Version         : 1.0
 * ================================================================= */
 
-@media only screen and (max-width:1366px) {}
+@media only screen and (max-width:1366px) {
+    .hs-title {
+        font-size: 72px;
+    }
 
-@media only screen and (max-width:1199px) {}
+    .hs-row {
+        grid-template-columns: 1fr 110px 1fr;
+    }
+
+    .hs-card .card-img-wrap {
+        height: 230px;
+    }
+
+    .ribbon-num {
+        font-size: 54px;
+    }
+}
+
+@media only screen and (max-width:1199px) {
+    .hs {
+        padding: 120px 0 100px;
+    }
+
+    .hs-title {
+        font-size: 64px;
+    }
+
+    .hs-title-sub {
+        font-size: 30px;
+    }
+
+    .hs-header {
+        margin-bottom: 90px;
+    }
+
+    .hs-row {
+        grid-template-columns: 1fr 100px 1fr;
+        min-height: 480px;
+    }
+
+    .year-number {
+        font-size: 60px;
+    }
+
+    .hs-card .card-img-wrap {
+        height: 220px;
+    }
+
+    .hs-card .card-title {
+        font-size: 26px;
+    }
+
+    .hs-card .card-body {
+        padding: 24px 26px 28px;
+    }
+
+    .ribbon-num {
+        font-size: 50px;
+    }
+
+    .ribbon-item {
+        padding: 44px 24px;
+    }
+
+    .hs-ribbon {
+        margin-top: 90px;
+    }
+
+    .menu-title {
+        font-size: 42px;
+    }
+
+    .menu-grid {
+        gap: 22px;
+    }
+
+    .menu-card.featured .ms-card-name {
+        font-size: 26px;
+    }
+}
 
 @media (min-width: 1024px) and (max-width: 1024px) {
     .header-actions {
@@ -260,6 +337,171 @@
     .footer-links li {
         margin-bottom: 0;
     }
+
+    .hs {
+        padding: 100px 0 80px;
+    }
+
+    .hs-title {
+        font-size: 54px;
+    }
+
+    .hs-title-sub {
+        font-size: 26px;
+    }
+
+    .hs-desc {
+        font-size: 15px;
+    }
+
+    .hs-header {
+        margin-bottom: 75px;
+        max-width: 680px;
+    }
+
+    .hs-row {
+        grid-template-columns: 1fr 80px 1fr;
+        min-height: 440px;
+        margin-bottom: 0;
+    }
+
+    .node-outer {
+        width: 60px;
+        height: 60px;
+    }
+
+    .node-icon-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .node-icon-wrap i {
+        font-size: 15px;
+    }
+
+    .hs-row.row-left .hs-card {
+        margin-right: 20px;
+    }
+
+    .hs-row.row-right .hs-card {
+        margin-left: 20px;
+    }
+
+    .hs-card .card-img-wrap {
+        height: 200px;
+    }
+
+    .year-number {
+        font-size: 52px;
+    }
+
+    .hs-card .card-title {
+        font-size: 24px;
+    }
+
+    .hs-card .card-text {
+        font-size: 14px;
+    }
+
+    .hs-card .card-body {
+        padding: 22px 24px 26px;
+    }
+
+    .hs-row.row-left .hs-card:hover {
+        transform: translateX(-6px) translateY(-4px) scale(1.01);
+    }
+
+    .hs-row.row-right .hs-card:hover {
+        transform: translateX(6px) translateY(-4px) scale(1.01);
+    }
+
+    .hs-ribbon {
+        margin-top: 80px;
+        border-radius: 22px;
+    }
+
+    .hs-ribbon-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ribbon-item:nth-child(2)::after,
+    .ribbon-item:nth-child(4)::after {
+        display: none;
+    }
+
+    .ribbon-item:nth-child(3),
+    .ribbon-item:nth-child(4) {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .ribbon-num {
+        font-size: 46px;
+        letter-spacing: -1px;
+    }
+
+    .ribbon-item {
+        padding: 40px 24px;
+    }
+
+    .ribbon-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+
+    .ribbon-icon i {
+        font-size: 16px;
+    }
+
+    .menu-section {
+        padding: 80px 0 90px;
+    }
+
+    .menu-title {
+        font-size: 38px;
+    }
+
+    .menu-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-head-right {
+        text-align: left;
+    }
+
+    .menu-desc {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .menu-card.featured {
+        grid-column: span 2;
+        flex-direction: column;
+    }
+
+    .menu-card.featured .ms-card-img {
+        width: 100%;
+        height: 280px;
+    }
+
+    .menu-card.featured .ms-card-body {
+        padding: 22px 24px 24px;
+    }
+
+    .menu-card.featured .ms-card-name {
+        font-size: 24px;
+    }
+
+    .menu-card.featured .ms-card-price {
+        font-size: 28px;
+    }
 }
 
 @media only screen and (max-width:900px) {}
@@ -384,6 +626,233 @@
 
     .cat-card--wide {
         flex: 0 0 300px;
+    }
+
+    .hs {
+        padding: 90px 0 70px;
+    }
+
+    .hs-title {
+        font-size: 42px;
+        letter-spacing: -0.5px;
+    }
+
+    .hs-title-sub {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .hs-desc {
+        font-size: 14.5px;
+    }
+
+    .hs-header {
+        margin-bottom: 60px;
+    }
+
+    .chapter-number {
+        width: 30px;
+        height: 30px;
+        font-size: 11px;
+    }
+
+    .chapter-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .ornament-line {
+        width: 50px;
+    }
+
+    .hs-row {
+        grid-template-columns: 44px 1fr;
+        min-height: auto;
+        margin-bottom: 36px;
+    }
+
+    .hs-row.row-left .hs-card,
+    .hs-row.row-right .hs-card {
+        grid-column: 2;
+        grid-row: 1;
+        margin-left: 16px;
+        margin-right: 0;
+    }
+
+    .hs-row.row-left .hs-node,
+    .hs-row.row-right .hs-node {
+        grid-column: 1;
+        grid-row: 1;
+        padding-top: 0;
+        justify-content: flex-start;
+        padding-top: 24px;
+    }
+
+    .hs-spine {
+        left: 21px;
+        transform: none;
+    }
+
+    .hs-spine-glow {
+        left: 21px;
+        transform: none;
+    }
+
+    .hs-row.row-left .hs-card:hover,
+    .hs-row.row-right .hs-card:hover {
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 88, 27, 0.08);
+    }
+
+    .hs-connector {
+        display: none;
+    }
+
+    .node-outer {
+        width: 50px;
+        height: 50px;
+    }
+
+    .node-icon-wrap {
+        width: 36px;
+        height: 36px;
+    }
+
+    .node-icon-wrap i {
+        font-size: 13px;
+    }
+
+    .node-pulse {
+        inset: -8px;
+    }
+
+    .node-pulse-2 {
+        inset: -14px;
+    }
+
+    .hs-card .card-img-wrap {
+        height: 190px;
+    }
+
+    .year-number {
+        font-size: 44px;
+        letter-spacing: -1px;
+    }
+
+    .year-era {
+        font-size: 9px;
+        padding: 4px 10px;
+    }
+
+    .hs-card .card-body {
+        padding: 20px 20px 24px;
+    }
+
+    .hs-card .card-title {
+        font-size: 22px;
+    }
+
+    .hs-card .card-text {
+        font-size: 13.5px;
+        margin-bottom: 18px;
+    }
+
+    .hs-card .card-tag {
+        letter-spacing: 2px;
+    }
+
+    .hs-card .card-highlight {
+        padding: 11px 14px;
+    }
+
+    .hs-card .highlight-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 7px;
+    }
+
+    .hs-card .highlight-icon i {
+        font-size: 13px;
+    }
+
+    .hs-card .highlight-text {
+        font-size: 12.5px;
+    }
+
+    .hs-ribbon {
+        margin-top: 60px;
+        border-radius: 18px;
+    }
+
+    .ribbon-num {
+        font-size: 40px;
+    }
+
+    .ribbon-item {
+        padding: 34px 18px;
+    }
+
+    .ribbon-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .ribbon-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        margin-bottom: 14px;
+    }
+
+    .ribbon-icon i {
+        font-size: 15px;
+    }
+
+    .menu-section {
+        padding: 70px 0 80px;
+    }
+
+    .menu-title {
+        font-size: 32px;
+    }
+
+    .menu-filter {
+        justify-content: flex-start;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        flex-wrap: nowrap;
+    }
+
+    .menu-filter::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu-filter {
+        scrollbar-width: none;
+    }
+
+    .filter-btn {
+        padding: 9px 16px;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .menu-card.featured {
+        grid-column: span 1;
+    }
+
+    .menu-card.featured .ms-card-img {
+        height: 240px;
+    }
+
+    .ms-card-img {
+        height: 200px !important;
     }
 }
 
@@ -582,6 +1051,215 @@
         bottom: -80px;
         left: 5%;
     }
+
+    .hs {
+        padding: 80px 0 60px;
+    }
+
+    .hs-title {
+        font-size: 36px;
+    }
+
+    .hs-title-sub {
+        font-size: 20px;
+    }
+
+    .hs-header {
+        margin-bottom: 50px;
+    }
+
+    .hs-desc {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .hs-row {
+        grid-template-columns: 38px 1fr;
+        margin-bottom: 28px;
+    }
+
+    .hs-row.row-left .hs-card,
+    .hs-row.row-right .hs-card {
+        margin-left: 12px;
+    }
+
+    .hs-spine,
+    .hs-spine-glow {
+        left: 18px;
+    }
+
+    .node-outer {
+        width: 44px;
+        height: 44px;
+    }
+
+    .node-icon-wrap {
+        width: 32px;
+        height: 32px;
+    }
+
+    .node-icon-wrap i {
+        font-size: 12px;
+    }
+
+    .hs-card .card-img-wrap {
+        height: 170px;
+    }
+
+    .year-number {
+        font-size: 38px;
+    }
+
+    .hs-card .card-year {
+        padding: 16px 18px 14px;
+    }
+
+    /* Card body */
+    .hs-card .card-body {
+        padding: 18px 18px 20px;
+    }
+
+    .hs-card .card-body::before {
+        left: 18px;
+        right: 18px;
+    }
+
+    .hs-card .card-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .hs-card .card-text {
+        font-size: 13px;
+        line-height: 1.75;
+        margin-bottom: 16px;
+    }
+
+    .hs-card .card-highlight {
+        padding: 10px 12px;
+        gap: 10px;
+        border-radius: 10px;
+    }
+
+    .highlight-text {
+        font-size: 12px;
+    }
+
+    .highlight-text span {
+        font-size: 10.5px;
+    }
+
+    .hs-ribbon {
+        margin-top: 50px;
+        border-radius: 16px;
+    }
+
+    .hs-ribbon-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ribbon-num {
+        font-size: 36px;
+        letter-spacing: -1px;
+        margin-bottom: 8px;
+    }
+
+    .ribbon-item {
+        padding: 28px 14px;
+    }
+
+    .ribbon-label {
+        font-size: 9.5px;
+        letter-spacing: 1px;
+    }
+
+    .ribbon-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        margin-bottom: 12px;
+    }
+
+    .ribbon-icon i {
+        font-size: 14px;
+    }
+
+    .hs-orb-1 {
+        width: 400px;
+        height: 400px;
+        top: -150px;
+        right: -150px;
+    }
+
+    .hs-orb-2 {
+        width: 280px;
+        height: 280px;
+    }
+
+    .menu-title {
+        font-size: 26px;
+    }
+
+    .menu-head {
+        margin-bottom: 36px;
+    }
+
+    .filter-btn .filter-count {
+        display: none;
+    }
+
+    .filter-btn i {
+        display: none;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 11.5px;
+    }
+
+    .ms-card-name {
+        font-size: 18px;
+    }
+
+    .menu-card.featured .ms-card-name {
+        font-size: 20px;
+    }
+
+    .ms-card-body {
+        padding: 16px;
+    }
+
+    .menu-card.featured .ms-card-body {
+        padding: 16px;
+    }
+
+    .ms-card-price {
+        font-size: 22px;
+    }
+
+    .menu-card.featured .ms-card-price {
+        font-size: 26px;
+    }
+
+    .btn-cart {
+        font-size: 11px;
+        padding: 10px 44px 10px 15px;
+    }
+
+    .btn-cart::before {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        right: 4px;
+    }
+
+    .menu-card.offer-card .ms-card-body {
+        padding: 28px 24px;
+    }
+
+    .offer-title {
+        font-size: 24px;
+    }
 }
 
 @media only screen and (max-width:535px) {}
@@ -679,5 +1357,80 @@
 
     .cat-card--wide {
         flex: 0 0 260px;
+    }
+
+    .hs-title {
+        font-size: 30px;
+        letter-spacing: 0;
+    }
+
+    .hs-title-sub {
+        font-size: 17px;
+    }
+
+    .hs-header {
+        margin-bottom: 44px;
+    }
+
+    .hs-chapter {
+        gap: 8px;
+    }
+
+    .ornament-line {
+        width: 32px;
+    }
+
+    .hs-row {
+        grid-template-columns: 34px 1fr;
+    }
+
+    .hs-row.row-left .hs-card,
+    .hs-row.row-right .hs-card {
+        margin-left: 10px;
+    }
+
+    .hs-spine,
+    .hs-spine-glow {
+        left: 16px;
+    }
+
+    .node-outer {
+        width: 38px;
+        height: 38px;
+    }
+
+    .node-icon-wrap {
+        width: 28px;
+        height: 28px;
+    }
+
+    .node-icon-wrap i {
+        font-size: 11px;
+    }
+
+    .hs-ribbon-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ribbon-num {
+        font-size: 32px;
+    }
+
+    .ribbon-item {
+        padding: 24px 12px;
+    }
+
+    .ribbon-label {
+        font-size: 9px;
+    }
+
+    .ribbon-icon {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 10px;
+    }
+
+    .menu-title {
+        font-size: 24px;
     }
 }

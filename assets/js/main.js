@@ -1,26 +1,21 @@
-// ====================== AOS Init ======================
 AOS.init({ duration: 800, once: true, offset: 80 });
 
-// ====================== Hero GSAP Entrance ======================
+// Hero
 document.addEventListener("DOMContentLoaded", function () {
-
     // Staggered entrance for hero content
     gsap.from(".hero-badge", { opacity: 0, y: 30, duration: 0.7, delay: 0.2, ease: "power3.out" });
     gsap.from(".hero-title", { opacity: 0, y: 50, duration: 0.8, delay: 0.4, ease: "power3.out" });
     gsap.from(".hero-desc", { opacity: 0, y: 30, duration: 0.7, delay: 0.6, ease: "power3.out" });
     gsap.from(".hero-actions", { opacity: 0, y: 30, duration: 0.7, delay: 0.75, ease: "power3.out" });
     gsap.from(".hero-stats", { opacity: 0, y: 20, duration: 0.7, delay: 0.9, ease: "power3.out" });
-
     // Pizza plate entrance
     gsap.from(".hero-pizza", { opacity: 0, scale: 0.6, rotation: -15, duration: 1, delay: 0.5, ease: "back.out(1.4)" });
     gsap.from(".plate-ring", { opacity: 0, scale: 0.5, duration: 0.8, delay: 0.8, ease: "power2.out" });
     gsap.from(".ring-2", { opacity: 0, scale: 0.5, duration: 0.8, delay: 1.0, ease: "power2.out" });
-
     // Food badges entrance
     gsap.from(".badge-top-right", { opacity: 0, x: 40, duration: 0.7, delay: 1.1, ease: "back.out(1.7)" });
     gsap.from(".badge-bottom-left", { opacity: 0, x: -40, duration: 0.7, delay: 1.2, ease: "back.out(1.7)" });
     gsap.from(".badge-top-left", { opacity: 0, x: -40, duration: 0.7, delay: 1.3, ease: "back.out(1.7)" });
-
     // Shapes entrance
     gsap.from(".hero-shape", {
         opacity: 0,
@@ -31,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "back.out(1.4)"
     });
 
-    // ====================== Parallax on Mouse Move ======================
+    // Parallax on Mouse Move
     const hero = document.querySelector(".hero-section");
     const shapes = document.querySelectorAll(".hero-shape");
     const orbs = document.querySelectorAll(".hero-orb");
@@ -94,7 +89,6 @@ document.getElementById('menu').addEventListener('hide.bs.collapse', function ()
         el.classList.remove('mobile-open');
     });
 });
-
 // Scroll to Top Button
 const scrollTopBtn = document.getElementById('footerScrollTop');
 window.addEventListener('scroll', () => {
@@ -104,7 +98,6 @@ window.addEventListener('scroll', () => {
         scrollTopBtn.classList.remove('show');
     }
 });
-
 scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
@@ -112,27 +105,8 @@ scrollTopBtn.addEventListener('click', () => {
     });
 });
 
-// Loader Logic
-
-// function hidLoader() {
-//     document.getElementById('loader').classList.add('hide');
-//     document.querySelector('.overflow-wrapper').classList.add('show');
-// }
-// const minWait = new Promise(r => setTimeout(r, 2200));
-// const pageLoad = new Promise(r => {
-//     if (document.readyState === 'complete') r();
-//     else window.addEventListener('load', r);
-// });
-// Promise.all([minWait, pageLoad]).then(hidLoader);
-
-
-
-
-
 (function () {
     'use strict';
-
-    // ── AOS Init ──
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800,
@@ -141,47 +115,19 @@ scrollTopBtn.addEventListener('click', () => {
             offset: 60,
         });
     }
-
-    // ── Loader hide + site reveal ──
     var loader = document.getElementById('loader');
     var wrapper = document.querySelector('.overflow-wrapper');
-
     function hideLoader() {
         if (loader) loader.classList.add('hide');
         if (wrapper) wrapper.classList.add('show');
     }
-
     var minWait = new Promise(function (r) { setTimeout(r, 2200); });
     var pageLoad = new Promise(function (r) {
         if (document.readyState === 'complete') r();
         else window.addEventListener('load', r);
     });
     Promise.all([minWait, pageLoad]).then(hideLoader);
-
-    // ── Loader percentage counter ──
-    // var pctEl = document.getElementById('pct');
-    // if (pctEl) {
-    //     var duration = 2800, start = performance.now();
-    //     function tick(now) {
-    //         var t = Math.min((now - start) / duration, 1);
-    //         var eased = t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    //         pctEl.textContent = Math.round(eased * 100) + '%';
-    //         if (t < 1) requestAnimationFrame(tick);
-    //     }
-    //     setTimeout(function () { requestAnimationFrame(tick); }, 600);
-    // }
-
-    // ── Filter tabs (categories section) ──
-    // document.querySelectorAll('.filter-tab').forEach(function (btn) {
-    //     btn.addEventListener('click', function () {
-    //         document.querySelectorAll('.filter-tab').forEach(function (b) {
-    //             b.classList.remove('active');
-    //         });
-    //         btn.classList.add('active');
-    //     });
-    // });
-
-    // ── Animated counters (stats strip) ──
+    // Animated counters
     function animCounter(el, target, suffix, dur) {
         dur = dur || 1800;
         var s = null;
@@ -194,7 +140,6 @@ scrollTopBtn.addEventListener('click', () => {
         }
         requestAnimationFrame(step);
     }
-
     var statsStrip = document.querySelector('.stats-strip');
     if (statsStrip && 'IntersectionObserver' in window) {
         var statsObs = new IntersectionObserver(function (entries) {
@@ -209,45 +154,29 @@ scrollTopBtn.addEventListener('click', () => {
         }, { threshold: 0.5 });
         statsObs.observe(statsStrip);
     }
-
-    // ── Filter pills ──
-    // document.querySelectorAll('.filter-pill').forEach(function (btn) {
-    //     if (!btn) return;
-    //     btn.addEventListener('click', function () {
-    //         document.querySelectorAll('.filter-pill').forEach(function (b) { if (b) b.classList.remove('active'); });
-    //         btn.classList.add('active');
-    //     });
-    // });
-
-    // Drag-to-scroll track (flicker-free)
+    // Drag-to-scroll track
     var track = document.getElementById('catTrack');
     if (track) {
         var isDown = false, startX, scrollLeft, hasDragged = false;
-
         track.addEventListener('mousedown', function (e) {
             isDown = true;
             hasDragged = false;
             track.classList.add('grabbing');
             startX = e.pageX;
             scrollLeft = track.scrollLeft;
-            e.preventDefault(); // block text/image selection immediately
+            e.preventDefault();
         });
-
-        // listen on document so drag outside track still works
         document.addEventListener('mouseup', function () {
             if (!isDown) return;
             isDown = false;
             track.classList.remove('grabbing');
         });
-
         document.addEventListener('mousemove', function (e) {
             if (!isDown) return;
             var dx = e.pageX - startX;
             if (Math.abs(dx) > 4) hasDragged = true;
             track.scrollLeft = scrollLeft - dx;
         });
-
-        // swallow click if it was actually a drag
         track.addEventListener('click', function (e) {
             if (hasDragged) {
                 e.preventDefault();
@@ -255,8 +184,6 @@ scrollTopBtn.addEventListener('click', () => {
                 hasDragged = false;
             }
         }, true);
-
-        // Touch drag
         var touchStartX = 0, touchScrollLeft = 0;
         track.addEventListener('touchstart', function (e) {
             touchStartX = e.touches[0].pageX;
@@ -267,14 +194,12 @@ scrollTopBtn.addEventListener('click', () => {
             track.scrollLeft = touchScrollLeft - dx;
         }, { passive: true });
     }
-
-    // ── Arrow buttons ──
+    // Arrow buttons
     var prevBtn = document.getElementById('prevBtn');
     var nextBtn = document.getElementById('nextBtn');
     if (prevBtn && track) prevBtn.addEventListener('click', function () { track.scrollBy({ left: -320, behavior: 'smooth' }); });
     if (nextBtn && track) nextBtn.addEventListener('click', function () { track.scrollBy({ left: 320, behavior: 'smooth' }); });
-
-    // ── Animated counters ──
+    // Animated counters
     function animCounter(el, target, suffix, dur) {
         dur = dur || 1800;
         var s = null;
@@ -286,7 +211,6 @@ scrollTopBtn.addEventListener('click', () => {
             if (p < 1) requestAnimationFrame(step);
         })(performance.now());
     }
-
     var band = document.querySelector('.stats-band');
     if (band && 'IntersectionObserver' in window) {
         var sObs = new IntersectionObserver(function (entries) {
@@ -301,6 +225,72 @@ scrollTopBtn.addEventListener('click', () => {
         }, { threshold: 0.4 });
         sObs.observe(band);
     }
-    
+    // Spine glow fill on scroll
+    (function () {
+        var glow = document.getElementById('hsSpineGlow');
+        var tl = document.querySelector('.hs-timeline');
+        if (!glow || !tl) return;
+        function update() {
+            var r = tl.getBoundingClientRect(), wh = window.innerHeight;
+            var prog = (wh * 0.9 - r.top) / (r.height + wh * 0.6);
+            glow.style.height = Math.max(0, Math.min(1, prog)) * 100 + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+    }());
+    // Animated counters (ribbon)
+    (function () {
+        var ribbon = document.querySelector('.hs-ribbon');
+        if (!ribbon) return;
+        function anim(el, target, dur) {
+            dur = dur || 1800; var s = null;
+            (function step(ts) {
+                if (!s) s = ts;
+                var p = Math.min((ts - s) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(e * target);
+                if (p < 1) requestAnimationFrame(step);
+            }(performance.now()));
+        }
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                    ribbon.querySelectorAll('.sr-num[data-target]').forEach(function (el) {
+                        anim(el, +el.dataset.target);
+                    });
+                    obs.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        obs.observe(ribbon);
+    }());
+
+    // Cursor glow follow on cards
+    document.querySelectorAll('.hs-card').forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+            var r = card.getBoundingClientRect();
+            var glow = card.querySelector('.card-corner-glow');
+            if (glow) { glow.style.left = (e.clientX - r.left - 60) + 'px'; glow.style.top = (e.clientY - r.top - 60) + 'px'; }
+        });
+    });
 
 })();
+
+// menu tabs
+document.querySelectorAll('.filter-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var cat = btn.dataset.tab;
+        document.querySelectorAll('.menu-panel').forEach(function (p) { p.classList.remove('active'); });
+        var target = document.getElementById('panel-' + cat);
+        if (target) {
+            target.classList.add('active');
+            target.querySelectorAll('.sr').forEach(function (el) { el.classList.remove('visible'); });
+            setTimeout(function () {
+                target.querySelectorAll('.sr').forEach(function (el, i) {
+                    setTimeout(function () { el.classList.add('visible'); }, i * 70);
+                });
+            }, 30);
+        }
+    });
+});
