@@ -1,5 +1,3 @@
-AOS.init({ duration: 800, once: true, offset: 80 });
-
 // Hero
 document.addEventListener("DOMContentLoaded", function () {
     // Staggered entrance for hero content
@@ -294,3 +292,90 @@ document.querySelectorAll('.filter-btn').forEach(function (btn) {
         }
     });
 });
+
+// testimonial slider
+(function () {
+    var wrap = document.querySelector('.testi-slider-wrap');
+    var track = document.getElementById('testiTrack');
+    var dotsEl = document.getElementById('testiDots');
+    var prevBtn = document.getElementById('testiPrev');
+    var nextBtn = document.getElementById('testiNext');
+    if (!track || !wrap) return;
+
+    var cards = Array.from(track.querySelectorAll('.testi-card'));
+    var total = cards.length;
+    var current = 0;
+    var GAP = 24;
+    var timer;
+
+    function perView() {
+        if (window.innerWidth < 576) return 1;
+        if (window.innerWidth < 992) return 2;
+        return 3;
+    }
+
+    function maxPage() { return Math.ceil(total / perView()); }
+
+    /* Set pixel width on each card from real container size */
+    function setCardWidths() {
+        var pv = perView();
+        var cardW = (wrap.offsetWidth - GAP * (pv - 1)) / pv;
+        cards.forEach(function (c) { c.style.width = cardW + 'px'; });
+    }
+
+    function buildDots() {
+        dotsEl.innerHTML = '';
+        var pages = maxPage();
+        for (var i = 0; i < pages; i++) {
+            (function (idx) {
+                var btn = document.createElement('button');
+                btn.className = 'testi-dot' + (idx === 0 ? ' active' : '');
+                btn.setAttribute('aria-label', 'Slide ' + (idx + 1));
+                btn.addEventListener('click', function () { goTo(idx); });
+                dotsEl.appendChild(btn);
+            })(i);
+        }
+    }
+
+    function goTo(idx) {
+        var pages = maxPage();
+        current = (idx + pages) % pages;
+        var pv = perView();
+        var cardW = cards[0].offsetWidth;
+        var offset = current * pv * (cardW + GAP);
+        var maxOffset = (total - pv) * (cardW + GAP);
+        track.style.transform = 'translateX(-' + Math.min(offset, maxOffset) + 'px)';
+        dotsEl.querySelectorAll('.testi-dot').forEach(function (d, i) {
+            d.classList.toggle('active', i === current);
+        });
+    }
+
+    function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(function () { goTo(current + 1); }, 5000);
+    }
+
+    prevBtn.addEventListener('click', function () { goTo(current - 1); startTimer(); });
+    nextBtn.addEventListener('click', function () { goTo(current + 1); startTimer(); });
+
+    track.addEventListener('mouseenter', function () { clearInterval(timer); });
+    track.addEventListener('mouseleave', startTimer);
+
+    var tx = 0;
+    track.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+        var dx = tx - e.changedTouches[0].clientX;
+        if (Math.abs(dx) > 40) { goTo(dx > 0 ? current + 1 : current - 1); startTimer(); }
+    });
+
+    window.addEventListener('resize', function () {
+        current = 0;
+        setCardWidths();
+        buildDots();
+        goTo(0);
+    });
+
+    setCardWidths();
+    buildDots();
+    startTimer();
+}());

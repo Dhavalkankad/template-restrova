@@ -89,10 +89,6 @@
         display: none;
     }
 
-    .footer-cta-title {
-        font-size: 40px;
-    }
-
     .footer-grid {
         grid-template-columns: 1.5fr 1fr 1fr;
         gap: 45px;
@@ -300,18 +296,65 @@
         margin-top: 80px;
     }
 
-    .footer-cta-section {
-        padding: 60px 0;
-    }
-
-    .footer-cta-title {
-        font-size: 36px;
-        margin-bottom: 12px;
+    .footer-cta-section .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
     }
 
     .footer-cta-subtitle {
         font-size: 16px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+    }
+
+    .footer-cta-content {
+        width: 100%;
+        max-width: 560px;
+    }
+
+    .footer-newsletter {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+    }
+
+    .footer-newsletter input {
+        flex: 1;
+        min-width: 0;
+        border-radius: 50px 0 0 50px;
+        border-right: none;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-footer-subscribe {
+        flex-shrink: 0;
+        border-radius: 0 50px 50px 0;
+        width: auto;
+        padding: 0 22px;
+    }
+
+    .footer-app-download {
+        width: 100%;
+        text-align: left;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .store-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .store-buttons img {
+        height: 42px;
+        width: auto;
     }
 
     .footer-grid {
@@ -322,10 +365,6 @@
 
     .footer-main {
         padding: 60px 0 40px;
-    }
-
-    .footer-newsletter {
-        max-width: 100%;
     }
 
     .social-link {
@@ -502,30 +541,78 @@
     .menu-card.featured .ms-card-price {
         font-size: 28px;
     }
+
+    .chef-card--featured .chef-card__photo {
+        height: 300px;
+    }
+
+    .testi-rating-pill {
+        display: none;
+    }
+
+    .testi-header-row {
+        gap: 20px;
+    }
 }
 
 @media only screen and (max-width:900px) {}
 
 @media only screen and (max-width:767px) {
+
     .footer-modern {
         margin-top: 70px;
     }
 
-    .footer-cta-section {
-        padding: 50px 0;
-    }
-
-    .footer-cta-title {
-        font-size: 32px;
+    .footer-cta-section .container {
+        gap: 28px;
     }
 
     .footer-cta-subtitle {
         font-size: 15px;
+        margin-bottom: 18px;
+    }
+
+    .footer-newsletter {
+        flex-direction: row;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        border-radius: 0;
+        gap: 0;
+    }
+
+    .btn-footer-subscribe {
+        flex-shrink: 0;
+        border-radius: 0 50px 50px 0;
+        width: auto;
+        padding: 0 20px;
+    }
+
+    .footer-newsletter input {
+        flex: 1;
+        min-width: 0;
+        border-radius: 50px 0 0 50px;
+        border-right: none;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .store-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .store-buttons img {
+        height: 40px;
+        width: auto;
     }
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 35px;
+        margin-bottom: 30px;
     }
 
     .footer-brand-column {
@@ -910,18 +997,89 @@
         margin-top: 60px;
     }
 
-    .footer-cta-section {
-        padding: 40px 0;
+    .footer-cta-section .container {
+        gap: 22px;
     }
 
-    .footer-cta-title {
-        font-size: 28px;
-        margin-bottom: 10px;
+    .footer-cta-content {
+        width: 100%;
+        max-width: 100%;
     }
 
     .footer-cta-subtitle {
         font-size: 14px;
-        margin-bottom: 25px;
+        margin-bottom: 18px;
+    }
+
+    .footer-newsletter {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        border: none;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .footer-newsletter input {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 14px;
+        border-radius: 50px !important;
+        border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+        border-right: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    .btn-footer-subscribe {
+        width: 100%;
+        padding: 13px 20px;
+        border-radius: 50px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+    }
+
+    .btn-footer-subscribe::after {
+        content: 'Subscribe';
+    }
+
+    .footer-app-download {
+        width: 100%;
+        text-align: left;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-newsletter input {
+        flex: 1;
+        min-width: 0;
+        border-radius: 50px 0 0 50px;
+        border-right: none;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .store-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .store-buttons img {
+        height: 38px;
+        width: auto;
+        max-width: 140px;
     }
 
     .footer-grid {
@@ -936,23 +1094,6 @@
 
     .footer-main {
         padding: 50px 0 30px;
-    }
-
-    .footer-newsletter {
-        flex-direction: column;
-        gap: 10px;
-        padding: 8px;
-        border-radius: 15px;
-    }
-
-    .footer-newsletter input {
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-
-    .btn-footer-subscribe {
-        width: 100%;
-        padding: 12px;
     }
 
     .logo-text {
@@ -1014,12 +1155,34 @@
         margin-top: 10px;
     }
 
+    .footer-bottom-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+    }
+
     .copyright-text {
         font-size: 12px;
     }
 
+    .copyright-text .divider {
+        display: none;
+    }
+
+    .copyright-text a {
+        display: inline-block;
+        margin: 2px 4px;
+    }
+
     .payment-label {
         font-size: 11px;
+    }
+
+    .payment-methods {
+        justify-content: center;
+        font-size: 1.4rem;
+        gap: 8px;
     }
 
     .payment-methods i {
@@ -1114,7 +1277,6 @@
         padding: 16px 18px 14px;
     }
 
-    /* Card body */
     .hs-card .card-body {
         padding: 18px 18px 20px;
     }
@@ -1260,17 +1422,65 @@
     .offer-title {
         font-size: 24px;
     }
+
+    .chef-card__photo {
+        height: 260px;
+    }
+
+    .chef-card--featured .chef-card__photo {
+        height: 280px;
+    }
+
+    .testi-section {
+        padding: 80px 0 70px;
+    }
+
+    .testi-card {
+        padding: 24px 20px 22px;
+    }
+
+    .testi-header-row {
+        margin-bottom: 36px;
+    }
+
+    .testi-section .section-title {
+        font-size: 30px;
+    }
 }
 
 @media only screen and (max-width:535px) {}
 
 @media (max-width: 480px) {
-    .footer-cta-title {
-        font-size: 24px;
-    }
 
     .footer-cta-subtitle {
         font-size: 13px;
+    }
+
+    .btn-footer-subscribe {
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+
+    .footer-newsletter input {
+        flex: 1;
+        min-width: 0;
+        border-radius: 50px 0 0 50px;
+        border-right: none;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .store-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .store-buttons img {
+        height: 40px;
+        width: auto;
+        max-width: 160px;
     }
 
     .logo-text {
@@ -1303,13 +1513,8 @@
         right: 20px;
     }
 
-    .footer-newsletter input {
-        padding: 10px 15px;
-        font-size: 13px;
-    }
-
-    .btn-footer-subscribe {
-        padding: 10px;
+    .payment-methods {
+        font-size: 1.25rem;
     }
 
     .stats-strip {

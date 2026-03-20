@@ -4257,20 +4257,6 @@ Category Section
     color: rgba(255, 255, 255, 0.35);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==================================================
    MENU SECTION
 =================================================== */
@@ -4832,4 +4818,470 @@ Category Section
 
 .btn-offer {
     width: fit-content;
+}
+
+/* ==================================================
+   CHEFS SECTION
+=================================================== */
+.chefs-section {
+    background: var(--dark-color);
+    position: relative;
+    overflow: hidden;
+    padding: 150px 0 150px;
+}
+
+.chefs-section::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 88, 27, .12) 0%, transparent 70%);
+    top: -100px;
+    left: -150px;
+    pointer-events: none;
+}
+
+.chefs-section::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 88, 27, .08) 0%, transparent 70%);
+    bottom: -80px;
+    right: -100px;
+    pointer-events: none;
+}
+
+.curve-top {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: var(--white-color);
+    clip-path: ellipse(55% 100% at 50% 0%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.curve-bottom {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: var(--white-color);
+    clip-path: ellipse(55% 100% at 50% 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.chefs-head {
+    margin-bottom: 56px;
+    color: var(--white-color);
+}
+
+.chefs-section .section-heading {
+    color: var(--white-color);
+}
+
+.chefs-section .section-subtitle {
+    color: rgba(255, 255, 255, .45);
+}
+
+.chef-card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    cursor: pointer;
+}
+
+.chef-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 88, 27, .4);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, .45);
+}
+
+.chef-card--featured {
+    border-color: rgba(255, 88, 27, .25);
+}
+
+.chef-card--featured .chef-card__photo {
+    height: 360px;
+}
+
+.chef-card__photo {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.chef-card__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform .5s ease, filter .4s ease;
+    filter: brightness(.88) saturate(.9);
+}
+
+.chef-card:hover .chef-card__photo img {
+    transform: scale(1.06);
+    filter: brightness(1) saturate(1);
+}
+
+.chef-card__photo::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 0%;
+    left: 50%;
+    top: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.chef-card:hover .chef-card__photo::after {
+    height: 250%;
+    background: transparent;
+    transition: all 600ms linear;
+}
+
+.chef-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 45%, rgba(18, 18, 18, .9) 100%);
+}
+
+.chef-card__socials {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%) translateY(14px);
+    opacity: 0;
+    display: flex;
+    gap: 8px;
+    transition: opacity .3s ease, transform .3s ease;
+    z-index: 2;
+}
+
+.chef-card:hover .chef-card__socials {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.chef-card__socials a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .22);
+    color: #fff;
+    font-size: 12px;
+    display: grid;
+    place-items: center;
+    transition: background .25s, transform .25s;
+    text-decoration: none;
+}
+
+.chef-card__socials a:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.chef-card__info {
+    padding: 20px 22px 24px;
+    text-align: center;
+}
+
+.chef-card__role {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+}
+
+.chef-card__name {
+    font-family: var(--heading-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
+    transition: color .3s;
+}
+
+.chef-card:hover .chef-card__name {
+    color: var(--primary-color);
+}
+
+.chef-card__specialty {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, .38);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ==================================================
+   TESTIMONIAL SECTION
+=================================================== */
+.testi-section {
+    background: var(--white-color);
+    padding-bottom: 0px;
+}
+
+.testi-header-row {
+    margin-bottom: 52px;
+}
+
+.testi-rating-pill {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--primary-color);
+    border: 1px solid rgba(18, 18, 18, .1);
+    border-radius: 100px;
+    padding: 10px 20px 10px 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+}
+
+.testi-rating-pill__score {
+    font-family: var(--heading-font);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--white-color);
+    line-height: 1;
+}
+
+.testi-rating-pill__stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 3px;
+}
+
+.testi-rating-pill__stars i {
+    font-size: 11px;
+    color: #fff800;
+}
+
+.testi-rating-pill__label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--white-color);
+    letter-spacing: .5px;
+}
+
+.testi-arrows {
+    display: flex;
+    gap: 10px;
+}
+
+.testi-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(18, 18, 18, .15);
+    background: var(--light-color);
+    color: var(--dark-color);
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.testi-arrow:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(255, 88, 27, .35);
+}
+
+.testi-slider-wrap {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testi-track {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+    transition: transform .55s cubic-bezier(.25, .46, .45, .94);
+    will-change: transform;
+}
+
+.testi-card {
+    flex-shrink: 0;
+    background: var(--light-color);
+    border-radius: 16px;
+    border: 1px solid rgba(18, 18, 18, .07);
+    padding: 30px 28px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+.testi-card__top-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: var(--primary-color);
+    border-radius: 0 3px 3px 0;
+    transition: width .4s ease;
+    pointer-events: none;
+}
+
+.testi-card:hover .testi-card__top-line {
+    width: 100%;
+}
+
+.testi-card--highlight {
+    background: var(--white-color);
+    border-color: var(--primary-color);
+}
+
+.testi-card--highlight .testi-card__top-line {
+    width: 0%;
+    border-radius: 0;
+}
+
+.testi-card--highlight:hover {
+    border-color: rgba(255, 88, 27, .45);
+}
+
+.testi-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.testi-card__stars {
+    display: flex;
+    gap: 4px;
+}
+
+.testi-card__stars i {
+    font-size: 13px;
+    color: #F59E0B;
+}
+
+.testi-card__ql {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 88, 27, .1);
+    border: 1px solid rgba(255, 88, 27, .2);
+    color: var(--primary-color);
+    font-size: 12px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    transition: background .3s, color .3s, border-color .3s;
+}
+
+.testi-card:hover .testi-card__ql {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.testi-card__text {
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: var(--text-color);
+    margin: 0;
+    flex: 1;
+}
+
+.testi-card__footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(18, 18, 18, .09);
+    margin-top: auto;
+}
+
+.testi-card--highlight .testi-card__footer {
+    border-top-color: rgba(255, 88, 27, .15);
+}
+
+.testi-card__avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 88, 27, .35);
+    flex-shrink: 0;
+    transition: transform .3s;
+}
+
+.testi-card:hover .testi-card__avatar {
+    transform: scale(1.07);
+}
+
+.testi-card__name {
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 3px;
+}
+
+.testi-card__source {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.testi-card__source i {
+    font-size: 10px;
+}
+
+.testi-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.testi-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(18, 18, 18, .15);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background .3s, width .3s, border-radius .3s;
+}
+
+.testi-dot.active {
+    width: 32px;
+    border-radius: 4px;
+    background: var(--primary-color);
 }
