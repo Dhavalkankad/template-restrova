@@ -379,3 +379,13 @@ document.querySelectorAll('.filter-btn').forEach(function (btn) {
     buildDots();
     startTimer();
 }());
+
+/* COUNTDOWN */
+let end = Date.now() + (8 * 3600 + 47 * 60 + 30) * 1000;
+(function tick() {
+    const diff = Math.max(0, Math.floor((end - Date.now()) / 1000));
+    document.getElementById('cdH').textContent = String(Math.floor(diff / 3600)).padStart(2, '0');
+    document.getElementById('cdM').textContent = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+    document.getElementById('cdS').textContent = String(diff % 60).padStart(2, '0');
+    setTimeout(tick, 1000);
+})();
