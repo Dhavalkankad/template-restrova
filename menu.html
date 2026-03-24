@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
     <title>Restrova - Restaurant & Food Delivery HTML Template</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -54,7 +56,6 @@
     </div>
     <div class="overflow-wrapper">
         <!-- HEADER SECTION -->
-
         <!-- TOP BAR -->
         <div class="top-bar">
             <div class="container">
@@ -78,7 +79,6 @@
                 </div>
             </div>
         </div>
-
         <!-- MAIN HEADER -->
         <header class="main-header" data-aos="fade-down" data-aos-duration="700">
             <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center">
@@ -128,8 +128,28 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="menu.html">Menu</a>
+                            <li class="nav-item has-dropdown">
+                                <a class="nav-link" href="#" aria-current="page">
+                                    Menu <i class="fa-solid fa-angle-down nav-arrow"></i>
+                                </a>
+                                <div class="mega-dropdown dropdown-simple">
+                                    <div class="dropdown-arrow"></div>
+                                    <p class="dropdown-label">Discover our delicious offerings</p>
+                                    <a href="menu.html" class="drop-row">
+                                        <span class="drop-icon"><i class="fa-solid fa-file"></i></span>
+                                        <span class="drop-body">
+                                            <strong>Menu</strong>
+                                            <small>Browse our full food collection in a classic style</small>
+                                        </span>
+                                    </a>
+                                    <a href="menu-detail.html" class="drop-row">
+                                        <span class="drop-icon"><i class="fa-solid fa-file-lines"></i></span>
+                                        <span class="drop-body">
+                                            <strong>Menu Detail</strong>
+                                            <small>Experience our dishes with immersive visuals</small>
+                                        </span>
+                                    </a>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.html">About</a>
@@ -288,14 +308,13 @@
                         ingredients sourced locally.
                     </p>
                 </div>
-                <div class="page-banner__breadcrumb">
+                <div class="page-banner__breadcrumb" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
                     <a href="#">Home</a>
                     <i class="fas fa-chevron-right"></i>
                     <span>Menu</span>
                 </div>
             </div>
         </section>
-
         <!--- Main Content -->
         <section class="menu-hero">
             <div class="menu-hero-ghost">RESTROVA</div>
@@ -345,7 +364,6 @@
                 </div>
             </div>
         </section>
-
         <!-- TICKER -->
         <div class="ticker">
             <div class="ticker-track">
@@ -361,7 +379,6 @@
                 <span class="ti">Private Dining</span><span class="ti">Organic Produce</span>
             </div>
         </div>
-
         <!-- MENU -->
         <section class="menu-section bg-section" id="our-menu">
             <div class="container">
@@ -1529,11 +1546,10 @@
                 </div>
             </div>
         </section>
-
         <!-- PROMO -->
-        <section class="promo">
-            <div class="promo-inner container">
-                <div>
+        <section class="promo" data-aos="fade-up" data-aos-duration="800">
+            <div class="promo-inner container" data-aos="fade-up" data-aos-duration="800">
+                <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
                     <div class="promo-tag">⚡ Limited Offer</div>
                     <div class="promo-title">First Order?<br>Get <span>50% Off</span></div>
                     <div class="promo-desc">Use code below at checkout. Valid for dine-in &amp; takeaway orders over
@@ -1543,7 +1559,7 @@
                         <div class="promo-code-val">RESTROVA50</div>
                     </div>
                 </div>
-                <div class="promo-right">
+                <div class="promo-right" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
                     <div class="cd-box">
                         <div class="cd-num" id="cdH">08</div>
                         <div class="cd-lbl">Hours</div>
@@ -1561,12 +1577,6 @@
                 </div>
             </div>
         </section>
-
-
-
-
-
-
         <!-- FOOTER -->
         <footer class="footer-modern mt-0">
             <div class="footer-background">
@@ -1580,7 +1590,7 @@
                     <div class="container">
                         <div class="footer-grid">
                             <!-- Brand Column -->
-                            <div class="footer-column footer-brand-column">
+                            <div class="footer-column footer-brand-column" data-aos="fade-up" data-aos-duration="700">
                                 <div class="footer-logo">
                                     <a href="index.html">
                                         <img src="assets/images/logo.png" alt="Restrova">
@@ -1606,7 +1616,7 @@
                                 </div>
                             </div>
                             <!-- Quick Links -->
-                            <div class="footer-column">
+                            <div class="footer-column" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
                                 <h5 class="footer-column-title">Quick Menu</h5>
                                 <ul class="footer-links">
                                     <li><a href="index.html">Home</a></li>
@@ -1618,7 +1628,7 @@
                                 </ul>
                             </div>
                             <!-- Services -->
-                            <div class="footer-column">
+                            <div class="footer-column" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
                                 <h5 class="footer-column-title">Our Services</h5>
                                 <ul class="footer-links">
                                     <li><a href="contact.html">Delivery</a></li>
@@ -1630,7 +1640,7 @@
                                 </ul>
                             </div>
                             <!-- Contact Information -->
-                            <div class="footer-column">
+                            <div class="footer-column" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
                                 <h5 class="footer-column-title">Contact Us</h5>
                                 <div class="contact-info">
                                     <div class="info-item">
@@ -1658,7 +1668,7 @@
                         <!-- Footer Divider -->
                         <div class="horizontal-pulse"></div>
                         <!-- Footer Bottom -->
-                        <div class="footer-bottom">
+                        <div class="footer-bottom" data-aos="fade-up" data-aos-delay="400" data-aos-duration="700">
                             <div class="footer-bottom-content">
                                 <p class="copyright-text">
                                     &copy; 2026 Restrova. All Rights Reserved.

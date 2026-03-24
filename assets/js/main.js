@@ -1,29 +1,26 @@
 // Hero
+function animateIfExists(selector, animation) {
+    if (document.querySelector(selector)) {
+        gsap.from(selector, animation);
+    }
+}
 document.addEventListener("DOMContentLoaded", function () {
     // Staggered entrance for hero content
-    gsap.from(".hero-badge", { opacity: 0, y: 30, duration: 0.7, delay: 0.2, ease: "power3.out" });
-    gsap.from(".hero-title", { opacity: 0, y: 50, duration: 0.8, delay: 0.4, ease: "power3.out" });
-    gsap.from(".hero-desc", { opacity: 0, y: 30, duration: 0.7, delay: 0.6, ease: "power3.out" });
-    gsap.from(".hero-actions", { opacity: 0, y: 30, duration: 0.7, delay: 0.75, ease: "power3.out" });
-    gsap.from(".hero-stats", { opacity: 0, y: 20, duration: 0.7, delay: 0.9, ease: "power3.out" });
+    animateIfExists(".hero-badge", { opacity: 0, y: 30, duration: 0.7, delay: 0.2, ease: "power3.out" });
+    animateIfExists(".hero-title", { opacity: 0, y: 50, duration: 0.8, delay: 0.4, ease: "power3.out" });
+    animateIfExists(".hero-desc", { opacity: 0, y: 30, duration: 0.7, delay: 0.6, ease: "power3.out" });
+    animateIfExists(".hero-actions", { opacity: 0, y: 30, duration: 0.7, delay: 0.75, ease: "power3.out" });
+    animateIfExists(".hero-stats", { opacity: 0, y: 20, duration: 0.7, delay: 0.9, ease: "power3.out" });
     // Pizza plate entrance
-    gsap.from(".hero-pizza", { opacity: 0, scale: 0.6, rotation: -15, duration: 1, delay: 0.5, ease: "back.out(1.4)" });
-    gsap.from(".plate-ring", { opacity: 0, scale: 0.5, duration: 0.8, delay: 0.8, ease: "power2.out" });
-    gsap.from(".ring-2", { opacity: 0, scale: 0.5, duration: 0.8, delay: 1.0, ease: "power2.out" });
+    animateIfExists(".hero-pizza", { opacity: 0, scale: 0.6, rotation: -15, duration: 1, delay: 0.5, ease: "back.out(1.4)" });
+    animateIfExists(".plate-ring", { opacity: 0, scale: 0.5, duration: 0.8, delay: 0.8, ease: "power2.out" });
+    animateIfExists(".ring-2", { opacity: 0, scale: 0.5, duration: 0.8, delay: 1.0, ease: "power2.out" });
     // Food badges entrance
-    gsap.from(".badge-top-right", { opacity: 0, x: 40, duration: 0.7, delay: 1.1, ease: "back.out(1.7)" });
-    gsap.from(".badge-bottom-left", { opacity: 0, x: -40, duration: 0.7, delay: 1.2, ease: "back.out(1.7)" });
-    gsap.from(".badge-top-left", { opacity: 0, x: -40, duration: 0.7, delay: 1.3, ease: "back.out(1.7)" });
+    animateIfExists(".badge-top-right", { opacity: 0, x: 40, duration: 0.7, delay: 1.1, ease: "back.out(1.7)" });
+    animateIfExists(".badge-bottom-left", { opacity: 0, x: -40, duration: 0.7, delay: 1.2, ease: "back.out(1.7)" });
+    animateIfExists(".badge-top-left", { opacity: 0, x: -40, duration: 0.7, delay: 1.3, ease: "back.out(1.7)" });
     // Shapes entrance
-    gsap.from(".hero-shape", {
-        opacity: 0,
-        scale: 0.3,
-        duration: 1,
-        delay: 0.3,
-        stagger: 0.15,
-        ease: "back.out(1.4)"
-    });
-
+    animateIfExists(".hero-shape", { opacity: 0, scale: 0.3, duration: 1, delay: 0.3, stagger: 0.15, ease: "back.out(1.4)" });
     // Parallax on Mouse Move
     const hero = document.querySelector(".hero-section");
     const shapes = document.querySelectorAll(".hero-shape");
@@ -381,11 +378,43 @@ document.querySelectorAll('.filter-btn').forEach(function (btn) {
 }());
 
 /* COUNTDOWN */
-let end = Date.now() + (8 * 3600 + 47 * 60 + 30) * 1000;
-(function tick() {
-    const diff = Math.max(0, Math.floor((end - Date.now()) / 1000));
-    document.getElementById('cdH').textContent = String(Math.floor(diff / 3600)).padStart(2, '0');
-    document.getElementById('cdM').textContent = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
-    document.getElementById('cdS').textContent = String(diff % 60).padStart(2, '0');
-    setTimeout(tick, 1000);
-})();
+document.addEventListener("DOMContentLoaded", function () {
+    let end = Date.now() + (8 * 3600 + 47 * 60 + 30) * 1000;
+    (function tick() {
+        const diff = Math.max(0, Math.floor((end - Date.now()) / 1000));
+        const h = document.getElementById('cdH');
+        const m = document.getElementById('cdM');
+        const s = document.getElementById('cdS');
+        if (h && m && s) {
+            h.textContent = String(Math.floor(diff / 3600)).padStart(2, '0');
+            m.textContent = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+            s.textContent = String(diff % 60).padStart(2, '0');
+        }
+        setTimeout(tick, 1000);
+    })();
+});
+
+/* Menu Detail Tabs */
+function switchTab(id, btn) {
+    document.querySelectorAll('.dtab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.dtab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+}
+
+/* FAQ ACCORDION */
+function toggle(qEl) {
+    const item = qEl.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+    const siblings = item.closest('.faq-list').querySelectorAll('.faq-item');
+    siblings.forEach(s => {
+        s.classList.remove('open');
+        s.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+
+    if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+}
