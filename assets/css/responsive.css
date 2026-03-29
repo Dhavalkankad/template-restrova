@@ -237,6 +237,21 @@
     .faq-sidebar {
         position: static;
     }
+
+    .policy-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .policy-main {
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+    }
+
+    .policy-block-inner {
+        padding: 26px 28px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -1284,6 +1299,28 @@
         flex-wrap: wrap;
         gap: 24px;
     }
+
+    .policy-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .rights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .policy-intro-inner {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .policy-block-inner {
+        padding: 22px 22px;
+    }
+
+    .policy-block-title {
+        font-size: 19px;
+    }
 }
 
 @media only screen and (max-width:600px) {
@@ -1945,6 +1982,32 @@
     .error-modern-section {
         min-height: auto;
         padding: 56px 0;
+    }
+
+    .page-banner {
+        padding: 80px 0 48px;
+    }
+
+    .policy-section {
+        padding: 52px 0 72px;
+    }
+
+    .policy-intro {
+        padding: 24px 22px;
+    }
+
+    .policy-block-inner {
+        padding: 20px 18px;
+    }
+
+    .policy-block-head {
+        gap: 14px;
+    }
+
+    .policy-block-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 17px;
     }
 }
 
