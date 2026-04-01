@@ -418,3 +418,125 @@ function toggle(qEl) {
         answer.style.maxHeight = answer.scrollHeight + 'px';
     }
 }
+
+/* Animated counters in aboutus page */
+function animCount(el) {
+    const target = parseInt(el.dataset.target);
+    const sup = el.querySelector('sup');
+    const supText = sup ? sup.outerHTML : '';
+    let current = 0;
+    const step = Math.ceil(target / 40);
+    const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.innerHTML = current + supText;
+        if (current >= target) clearInterval(timer);
+    }, 30);
+}
+const cObs = new IntersectionObserver(e => {
+    e.forEach(x => {
+        if (x.isIntersecting) {
+            x.target.querySelectorAll('.c-num[data-target]').forEach(animCount);
+            cObs.unobserve(x.target);
+        }
+    });
+}, { threshold: .3 });
+document.querySelectorAll('.counters').forEach(el => cObs.observe(el));
+
+/* Reservation page */
+
+/* Live Clock */
+function tick() {
+    const clockTime = document.getElementById('clockTime');
+    const clockDate = document.getElementById('clockDate');
+    if (!clockTime || !clockDate) return;
+    const n = new Date();
+    clockTime.textContent = n.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    clockDate.textContent = n.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric' });
+}
+if (document.getElementById('clockTime') && document.getElementById('clockDate')) {
+    tick();
+    setInterval(tick, 1000);
+}
+
+/* Select Time Slot */
+function selectTime(el) {
+    document.querySelectorAll('.ts').forEach(t => t.classList.remove('selected'));
+    el.classList.add('selected');
+    const slotText = el.querySelector('span');
+    selectedTime = slotText ? slotText.textContent : null;
+}
+let selectedDate = null, selectedTime = null;
+
+/* Date Picker */
+let dpYear, dpMonth;
+(function init() {
+    const monthLabel = document.getElementById('dpMonthLabel');
+    const grid = document.getElementById('dpGrid');
+    if (!monthLabel || !grid) return;
+    const n = new Date(); dpYear = n.getFullYear(); dpMonth = n.getMonth();
+    renderDP();
+})();
+
+function renderDP() {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const monthLabel = document.getElementById('dpMonthLabel');
+    const grid = document.getElementById('dpGrid');
+    if (!monthLabel || !grid) return;
+    monthLabel.textContent = months[dpMonth] + ' ' + dpYear;
+    grid.innerHTML = '';
+    const first = new Date(dpYear, dpMonth, 1).getDay();
+    const days = new Date(dpYear, dpMonth + 1, 0).getDate();
+    const today = new Date();
+    for (let i = 0; i < first; i++) { const c = document.createElement('div'); c.className = 'dp-cell empty'; grid.appendChild(c) }
+    for (let d = 1; d <= days; d++) {
+        const c = document.createElement('div'); c.className = 'dp-cell'; c.textContent = d;
+        const cellDate = new Date(dpYear, dpMonth, d);
+        const isToday = cellDate.toDateString() === today.toDateString();
+        const isPast = cellDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        if (isPast) { c.classList.add('disabled') }
+        else {
+            c.addEventListener('click', () => selectDay(c, d));
+            if (isToday) c.classList.add('today');
+            if (selectedDate && selectedDate.d === d && selectedDate.m === dpMonth && selectedDate.y === dpYear) c.classList.add('selected');
+        }
+        grid.appendChild(c);
+    }
+}
+function dpNav(dir) {
+    if (typeof dpMonth !== 'number' || typeof dpYear !== 'number') return;
+    dpMonth += dir;
+    if (dpMonth < 0) { dpMonth = 11; dpYear-- }
+    if (dpMonth > 11) { dpMonth = 0; dpYear++ }
+    renderDP();
+}
+function selectDay(el, d) {
+    document.querySelectorAll('.dp-cell.selected').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedDate = { d, m: dpMonth, y: dpYear };
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const selectedDateLabel = document.getElementById('dpSelectedDate');
+    if (!selectedDateLabel) return;
+    document.getElementById('dpSelectedDate').textContent = '— ' + d + ' ' + months[dpMonth] + ' ' + dpYear;
+}
+
+/* Steps */
+let curStep = 0;
+function goStep(n) {
+    const currentPanel = document.getElementById('panel' + curStep);
+    if (!currentPanel) return;
+    currentPanel.classList.remove('active');
+    // mark step indicator
+    const si = document.getElementById('si' + curStep);
+    if (si) {
+        si.classList.remove('active');
+        if (n > curStep) si.classList.add('done');
+        else si.classList.remove('done');
+    }
+    curStep = n;
+    const nextPanel = document.getElementById('panel' + curStep);
+    if (nextPanel) nextPanel.classList.add('active');
+    const nextSi = document.getElementById('si' + curStep);
+    if (nextSi) nextSi.classList.add('active');
+    const rightPanel = document.getElementById('rightPanel');
+    if (rightPanel) rightPanel.scrollTo({ top: 0, behavior: 'smooth' });
+}
