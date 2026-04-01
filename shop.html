@@ -292,36 +292,439 @@
                 </div>
             </nav>
         </header>
-        <!-- Breadcrumb -->
-        <section class="page-banner">
-            <div class="page-banner__bg"></div>
-            <div class="container position-relative">
-                <div class="page-banner__content">
-                    <div class="eyebrow" data-aos="fade-up" data-aos-duration="600">
-                        <span class="eyebrow-line"></span> Shop
+        <!-- Main Content -->
+        <!-- PROMO BAR -->
+        <div class="promo-bar">
+            <div class="container">
+                <div class="promo-inner">
+                    <div class="promo-text">🔥 First order? Get <strong>20% off</strong> with code:</div>
+                    <div class="shop-promo-code" onclick="copyCode()"><i class="fa-solid fa-copy"></i> RESTROVA20</div>
+                    <div class="promo-countdown">
+                        <span>Ends in</span>
+                        <span class="pc-num" id="ph">08</span><span class="pc-sep">:</span>
+                        <span class="pc-num" id="pm">47</span><span class="pc-sep">:</span>
+                        <span class="pc-num" id="ps">30</span>
                     </div>
-                    <h2 class="section-heading" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
-                        Your Table is <span class="hero-highlight">Waiting</span>
-                    </h2>
-                    <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
-                        A seat at Restrova is more than a reservation — it's the beginning of a memory. Let's make it
-                        perfect.
-                    </p>
                 </div>
-                <div class="page-banner__breadcrumb" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
-                    <a href="#">Home</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <span>Shop</span>
+            </div>
+        </div>
+        <!--  HERO -->
+        <section class="shop-hero">
+            <div class="shop-hero-bg"></div>
+            <div class="container">
+                <div class="shop-hero-inner">
+                    <div>
+                        <div class="eyebrow"><span class="eyebrow-line"></span>Restrova Shop</div>
+                        <h1 class="section-heading text-white">Bring the<br>Kitchen <span
+                                class="hero-highlight">Home</span></h1>
+                    </div>
+                    <div class="shop-hero-right">
+                        <div class="shop-hero-stats">
+                            <div class="hs-item">
+                                <div class="hs-num">60<span>+</span></div>
+                                <div class="hs-lbl">Products</div>
+                            </div>
+                            <div class="hs-item">
+                                <div class="hs-num">4.9<span>★</span></div>
+                                <div class="hs-lbl">Avg Rating</div>
+                            </div>
+                            <div class="hs-item">
+                                <div class="hs-num">24<span>h</span></div>
+                                <div class="hs-lbl">Dispatch</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-hero-stripe"></div>
+        </section>
+        <!-- SHOP -->
+        <section class="">
+            <div class="container">
+                <div class="shop-layout">
+                    <!-- SIDEBAR -->
+                    <aside class="sidebar">
+                        <!-- Categories -->
+                        <div class="sb-card">
+                            <div class="sb-head">
+                                <div class="sb-head-icon"><i class="fa-solid fa-border-all"></i></div>
+                                <div class="sb-head-title">Categories</div>
+                            </div>
+                            <div class="sb-body">
+                                <button class="cat-btn on">
+                                    <i class="fa-solid fa-border-all"></i>All Products<span class="cat-count">10</span>
+                                </button>
+                                <button class="cat-btn">
+                                    <i class="fa-solid fa-box-open"></i>Meal Kits<span class="cat-count">3</span>
+                                </button>
+                                <button class="cat-btn">
+                                    <i class="fa-solid fa-bottle-droplet"></i>Sauces & Oils<span
+                                        class="cat-count">3</span>
+                                </button>
+                                <button class="cat-btn">
+                                    <i class="fa-solid fa-bowl-food"></i>Artisan Pasta<span class="cat-count">2</span>
+                                </button>
+                                <button class="cat-btn">
+                                    <i class="fa-solid fa-seedling"></i>Spices & Rubs<span class="cat-count">1</span>
+                                </button>
+                                <button class="cat-btn">
+                                    <i class="fa-solid fa-gift"></i>Gift Sets<span class="cat-count">1</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Price Range -->
+                        <div class="sb-card">
+                            <div class="sb-head">
+                                <div class="sb-head-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+                                <div class="sb-head-title">Price Range</div>
+                            </div>
+                            <div class="price-range-wrap">
+                                <div class="pr-labels">
+                                    <span>$0</span>
+                                    <span>Up to <span>$150</span></span>
+                                </div>
+                                <input type="range" class="range-slider" min="10" max="200" value="150">
+                            </div>
+                        </div>
+                        <!-- Rating -->
+                        <div class="sb-card">
+                            <div class="sb-head">
+                                <div class="sb-head-icon"><i class="fa-solid fa-star"></i></div>
+                                <div class="sb-head-title">Rating</div>
+                            </div>
+                            <div class="rating-filters">
+                                <div class="rf">
+                                    <div class="rf-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="rf-lbl">5 Stars</span>
+                                    <span class="rf-cnt">(42)</span>
+                                    <div class="rf-cb"></div>
+                                </div>
+                                <div class="rf">
+                                    <div class="rf-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <span class="rf-lbl">4+ Stars</span>
+                                    <span class="rf-cnt">(28)</span>
+                                    <div class="rf-cb"></div>
+                                </div>
+                                <div class="rf">
+                                    <div class="rf-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <span class="rf-lbl">3+ Stars</span>
+                                    <span class="rf-cnt">(8)</span>
+                                    <div class="rf-cb"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <!-- MAIN -->
+                    <div class="main-area">
+                        <!-- Featured Banner -->
+                        <div class="feat-banner">
+                            <div class="feat-banner-bg">
+                                <img src="assets/images/shop-small-banner.jpg" alt="">
+                            </div>
+                            <div class="feat-banner-inner">
+                                <div>
+                                    <div class="fb-tag">⭐ Most Popular Kit</div>
+                                    <div class="fb-title">Wagyu Ribeye at Home</div>
+                                    <p class="fb-sub">Our most celebrated dish — brought to your kitchen with
+                                        step-by-step chef guidance.</p>
+                                </div>
+                                <div class="fb-right">
+                                    <div class="fb-price"><span>$</span>89</div>
+                                    <div class="fb-label">Per Serving Kit</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Toolbar -->
+                        <div class="toolbar">
+                            <div class="shop-search-wrap">
+                                <i class="fa-solid fa-magnifying-glass shop-search-icon"></i>
+                                <input type="text" class="shop-search-input" placeholder="Search products…">
+                            </div>
+                            <select class="sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="price-asc">Price: Low → High</option>
+                                <option value="price-desc">Price: High → Low</option>
+                                <option value="rating">Top Rated</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                            <div class="result-count"><strong id="resultNum">10</strong> products</div>
+                            <div class="view-toggle">
+                                <button class="vt-btn on" id="gridViewBtn" onclick="setView('grid')" title="Grid">
+                                    <i class="fa-solid fa-th"></i>
+                                </button>
+                                <button class="vt-btn" id="listViewBtn" onclick="setView('list')" title="List">
+                                    <i class="fa-solid fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product Grid -->
+                        <div class="products-grid" id="productsGrid">
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-10.jpg" alt="Wagyu Ribeye Kit">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-badges"><span class="pc-badge badge-hot">Best Seller</span></div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 5.0
+                                            <span>(312)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Kits</div>
+                                    <div class="pc-name"><a href="menu-detail.html">Wagyu Ribeye Kit</a></div>
+                                    <p class="pc-desc">800g A5 Wagyu, truffle butter, bone marrow and triple-cooked
+                                        fries. Chef video guide included.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><s>$110</s><sup>$</sup>89</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-2.jpg" alt="Carbonara Kit">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-badges"><span class="pc-badge badge-new">New</span></div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 4.9
+                                            <span>(276)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Kits</div>
+                                    <div class="pc-name"><a href="menu-detail.html">Carbonara Kit</a></div>
+                                    <p class="pc-desc">Hand-rolled spaghetti, guanciale, Pecorino Romano and farm
+                                        eggs. The authentic Roman way.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><sup>$</sup>42</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-9.jpg" alt="Truffle Butter">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-badges"><span class="pc-badge badge-bestseller">Fan
+                                                Favourite</span>
+                                        </div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 4.9
+                                            <span>(204)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Sauces</div>
+                                    <div class="pc-name"><a href="menu-detail.html">Truffle Butter (250g)</a></div>
+                                    <p class="pc-desc">Rich aromatic compound butter with hand-shaved black truffles.
+                                        Melts on anything.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><sup>$</sup>28</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-3.jpg" alt="Chilli Dipping Oil">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-badges"><span class="pc-badge badge-new">New</span></div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 4.7
+                                            <span>(145)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Sauces</div>
+                                    <div class="pc-name"><a href="menu-detail.html">Chilli Dipping Oil</a></div>
+                                    <p class="pc-desc">Cold-pressed extra virgin olive oil infused with Calabrian
+                                        chillies, garlic and rosemary.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><sup>$</sup>18</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-5.jpg" alt="Salmon at Home Kit">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-badges"><span class="pc-badge badge-sale">Sale</span></div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 4.8
+                                            <span>(96)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Kits</div>
+                                    <div class="pc-name"><a href="menu-detail.html">Salmon at Home Kit</a></div>
+                                    <p class="pc-desc">Wild Atlantic salmon with citrus miso glaze and saffron
+                                        risotto. Delivered fresh daily.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><s>$68</s><sup>$</sup>56</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-6.jpg" alt="Red Wine Jus">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 4.8
+                                            <span>(167)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Sauces</div>
+                                    <div class="pc-name"><a href="menu-detail.html">Red Wine Jus (500ml)</a></div>
+                                    <p class="pc-desc">Slow-reduced Chianti Classico jus with bone marrow and fresh
+                                        thyme. Restaurant quality at home.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><sup>$</sup>22</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-4.jpg" alt="Handmade Tagliatelle">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 4.8
+                                            <span>(289)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Pasta</div>
+                                    <div class="pc-name"><a href="menu-detail.html">Handmade Tagliatelle (250g)</a>
+                                    </div>
+                                    <p class="pc-desc">Bronze-die extruded egg tagliatelle, air-dried for 48 hours and
+                                        made in artisan batches.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><sup>$</sup>14</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-1.jpg" alt="Black Squid Ink Pasta">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-badges"><span class="pc-badge badge-new">New</span></div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 4.6
+                                            <span>(87)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Pasta</div>
+                                    <div class="pc-name"><a href="menu-detail.html">Black Squid Ink Pasta (200g)</a>
+                                    </div>
+                                    <p class="pc-desc">Jet-black linguine coloured with Sicilian squid ink, ideal with
+                                        seafood sauces.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><sup>$</sup>16</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-8.jpg" alt="Restrova Steak Rub">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-badges"><span class="pc-badge badge-bestseller">#1 Product</span>
+                                        </div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 4.9
+                                            <span>(321)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Spices</div>
+                                    <div class="pc-name"><a href="menu-detail.html">Restrova Steak Rub (80g)</a></div>
+                                    <p class="pc-desc">Signature blend of smoked paprika, sea salt, black pepper,
+                                        garlic and rosemary.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><sup>$</sup>12</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="pc-bar"></div>
+                                <a href="menu-detail.html">
+                                    <div class="pc-img-wrap">
+                                        <img src="assets/images/shop/product-7.jpg" alt="The Restrova Collection">
+                                        <div class="pc-img-overlay"></div>
+                                        <div class="pc-badges"><span class="pc-badge badge-hot">Gift Set</span></div>
+                                        <div class="pc-rating-img"><i class="fa-solid fa-star"></i> 5.0
+                                            <span>(67)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="pc-body">
+                                    <div class="pc-cat">Gifts</div>
+                                    <div class="pc-name"><a href="menu-detail.html">The Restrova Collection</a></div>
+                                    <p class="pc-desc">6-bottle gift set with truffle oil, chilli oil, balsamic,
+                                        steak rub and herb blend.</p>
+                                    <div class="pc-divider"></div>
+                                    <div class="pc-footer">
+                                        <div class="pc-price"><s>$120</s><sup>$</sup>98</div>
+                                        <a href="#" class="btn-default">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- Main Content -->
-
-
-
-
-
-        
         <!-- FOOTER -->
         <footer class="footer-modern mt-0">
             <div class="footer-background">

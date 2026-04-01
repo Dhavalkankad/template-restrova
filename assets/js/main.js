@@ -1,4 +1,4 @@
-// Hero
+﻿// Hero
 function animateIfExists(selector, animation) {
     if (document.querySelector(selector)) {
         gsap.from(selector, animation);
@@ -516,7 +516,7 @@ function selectDay(el, d) {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const selectedDateLabel = document.getElementById('dpSelectedDate');
     if (!selectedDateLabel) return;
-    document.getElementById('dpSelectedDate').textContent = '— ' + d + ' ' + months[dpMonth] + ' ' + dpYear;
+    document.getElementById('dpSelectedDate').textContent = 'â€” ' + d + ' ' + months[dpMonth] + ' ' + dpYear;
 }
 
 /* Steps */
@@ -540,3 +540,23 @@ function goStep(n) {
     const rightPanel = document.getElementById('rightPanel');
     if (rightPanel) rightPanel.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+/***** SHOP PAGE ************/
+(function () {
+    const productsGrid = document.getElementById('productsGrid');
+    if (!productsGrid) return;
+    const gridViewBtn = document.getElementById('gridViewBtn');
+    const listViewBtn = document.getElementById('listViewBtn');
+    const state = {
+        cat: 'all',
+        search: '',
+        sort: 'featured',
+        view: 'grid'
+    };
+    window.setView = function (view) {
+        state.view = view;
+        productsGrid.classList.toggle('list-view', view === 'list');
+        if (gridViewBtn) gridViewBtn.classList.toggle('on', view === 'grid');
+        if (listViewBtn) listViewBtn.classList.toggle('on', view === 'list');
+    };
+})();
