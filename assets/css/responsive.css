@@ -420,6 +420,10 @@
     .policy-block-inner {
         padding: 26px 28px;
     }
+
+    .art-sidebar {
+        position: static
+    }
 }
 
 @media (max-width: 991px) {
@@ -2210,6 +2214,28 @@
     .blog-page .nl-form-card {
         padding: 26px;
     }
+
+    .cf-grid {
+        grid-template-columns: 1fr
+    }
+
+    .author-bio {
+        grid-template-columns: 1fr
+    }
+
+    .ab-avatar {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 16px
+    }
+
+    .author-bio {
+        text-align: center
+    }
+
+    .ab-socials {
+        justify-content: center
+    }
 }
 
 @media only screen and (max-width:600px) {
@@ -3165,6 +3191,39 @@
     .blog-page .ac-footer {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .art-intro-card {
+        padding: 24px 22px
+    }
+
+    .pull-quote {
+        padding: 22px 22px
+    }
+
+    .pq-text {
+        font-size: 18px
+    }
+
+    .prose p {
+        font-size: 16px
+    }
+
+    .prose .lead-para::first-letter {
+        font-size: 5em
+    }
+
+    .inline-img {
+        height: 260px
+    }
+
+    .comment-form {
+        padding: 20px
+    }
+
+    .share-row {
+        flex-wrap: wrap;
+        gap: 8px
     }
 }
 
