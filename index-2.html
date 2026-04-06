@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Restrova - Restaurant & Food Delivery HTML Template</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/fancybox.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="glow glow-a"></div>
+        <div class="glow glow-b"></div>
+        <div class="plate-wrap">
+            <div class="ring-outer"></div>
+            <div class="ring-dash"></div>
+            <svg class="arc-track" viewBox="0 0 140 140">
+                <circle cx="70" cy="70" r="55" />
+            </svg>
+            <div class="orbit">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="plate">
+                <div class="cutlery">
+                    <svg width="14" height="38" viewBox="0 0 14 38">
+                        <rect x="1" y="0" width="2" height="16" rx="1" />
+                        <rect x="6" y="0" width="2" height="16" rx="1" />
+                        <rect x="11" y="0" width="2" height="16" rx="1" />
+                        <path d="M2 12 Q7 20 7 20 Q7 20 12 12" stroke="#ff581b" stroke-width="1.4" fill="none" />
+                        <rect x="6" y="19" width="2" height="19" rx="1" />
+                    </svg>
+                    <svg width="12" height="38" viewBox="0 0 12 38">
+                        <rect x="5" y="0" width="2" height="38" rx="1" />
+                        <path d="M7 0 Q12 8 7 16" stroke="#ff581b" stroke-width="1.2" fill="rgba(255, 88, 27, 0.2)" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="brand">Restrova</div>
+        <div class="tagline">Restaurant • Cafe • Food Delivery</div>
+    </div>
+    <div class="overflow-wrapper">
+        <!-- HEADER SECTION -->
+        <header class="header2-wrap" id="header2">
+            <div class="container">
+                <nav class="header2-navbar">
+                    <!-- Logo -->
+                    <a href="index-2.html" class="header2-logo">
+                        <img src="assets/images/logo.png" alt="Restrova">
+                    </a>
+                    <!-- Desktop Menu -->
+                    <div class="header2-menu-wrap">
+                        <ul class="header2-menu">
+                            <li class="header2-menu-item header2-has-dropdown">
+                                <a href="#">Home <i class="fa-solid fa-angle-down"></i></a>
+                                <div class="header2-dropdown">
+                                    <a href="index.html">Homepage Classic</a>
+                                    <a href="index-2.html" class="active">Homepage Video</a>
+                                    <a href="index-3.html">Homepage Slider</a>
+                                </div>
+                            </li>
+                            <li class="header2-menu-item header2-has-dropdown">
+                                <a href="#">Menu <i class="fa-solid fa-angle-down"></i></a>
+                                <div class="header2-dropdown">
+                                    <a href="menu.html">Our Menu</a>
+                                    <a href="menu-detail.html">Menu Details</a>
+                                </div>
+                            </li>
+                            <li class="header2-menu-item">
+                                <a href="about.html">About</a>
+                            </li>
+                            <li class="header2-menu-item header2-has-dropdown">
+                                <a href="#">Pages <i class="fa-solid fa-angle-down"></i></a>
+                                <div class="header2-dropdown header2-dropdown-wide">
+                                    <div class="header2-dropdown-grid">
+                                        <a href="our-chefs.html">Our Chefs</a>
+                                        <a href="testimonials.html">Testimonials</a>
+                                        <a href="shop.html">Shop</a>
+                                        <a href="shop-details.html">Shop Details</a>
+                                        <a href="cart.html">Cart</a>
+                                        <a href="checkout.html">Checkout</a>
+                                        <a href="gallery.html">Gallery</a>
+                                        <a href="faq.html">FAQ</a>
+                                        <a href="privacy-policy.html">Privacy Policy</a>
+                                        <a href="terms-conditions.html">Terms & Conditions</a>
+                                        <a href="404.html">404 Page</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header2-menu-item header2-has-dropdown">
+                                <a href="#">Blog <i class="fa-solid fa-angle-down"></i></a>
+                                <div class="header2-dropdown">
+                                    <a href="blog.html">Blog</a>
+                                    <a href="blog-details.html">Blog Details</a>
+                                </div>
+                            </li>
+                            <li class="header2-menu-item">
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Right Actions -->
+                    <div class="header2-actions">
+                        <a href="#" class="header2-icon" aria-label="Search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                        <a href="#" class="header2-icon header2-cart" aria-label="Cart">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span>2</span>
+                        </a>
+                        <a href="reservation.html" class="btn-default btn-highlighted header2-reservation-btn">
+                            Reserve Table
+                        </a>
+                        <!-- Mobile Toggle -->
+                        <button class="header2-toggle" id="header2Toggle" aria-label="Toggle Menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <!-- Mobile Overlay -->
+            <div class="header2-mobile-overlay" id="header2MobileOverlay"></div>
+            <!-- Mobile Menu -->
+            <div class="header2-mobile-menu" id="header2MobileMenu">
+                <div class="header2-mobile-inner">
+                    <div class="header2-mobile-top">
+                        <a href="index-2.html" class="header2-mobile-logo">
+                            <img src="assets/images/logo.png" alt="Restrova">
+                        </a>
+                        <button class="header2-mobile-close" id="header2MobileClose">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <ul class="header2-mobile-nav">
+                        <li class="header2-mobile-item header2-mobile-has-submenu">
+                            <div class="header2-mobile-link-wrap">
+                                <a href="#">Home</a>
+                                <button class="header2-mobile-submenu-toggle">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </button>
+                            </div>
+                            <ul class="header2-mobile-submenu">
+                                <li><a href="index.html">Homepage Classic</a></li>
+                                <li><a href="index-2.html">Homepage Video</a></li>
+                                <li><a href="index-3.html">Homepage Slider</a></li>
+                            </ul>
+                        </li>
+                        <li class="header2-mobile-item header2-mobile-has-submenu">
+                            <div class="header2-mobile-link-wrap">
+                                <a href="#">Menu</a>
+                                <button class="header2-mobile-submenu-toggle">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </button>
+                            </div>
+                            <ul class="header2-mobile-submenu">
+                                <li><a href="menu.html">Our Menu</a></li>
+                                <li><a href="menu-detail.html">Menu Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="header2-mobile-item">
+                            <a href="about.html">About</a>
+                        </li>
+                        <li class="header2-mobile-item header2-mobile-has-submenu">
+                            <div class="header2-mobile-link-wrap">
+                                <a href="#">Pages</a>
+                                <button class="header2-mobile-submenu-toggle">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </button>
+                            </div>
+                            <ul class="header2-mobile-submenu">
+                                <li><a href="our-chefs.html">Our Chefs</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="shop-details.html">Shop Details</a></li>
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                                <li><a href="404.html">404 Page</a></li>
+                            </ul>
+                        </li>
+                        <li class="header2-mobile-item header2-mobile-has-submenu">
+                            <div class="header2-mobile-link-wrap">
+                                <a href="#">Blog</a>
+                                <button class="header2-mobile-submenu-toggle">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </button>
+                            </div>
+                            <ul class="header2-mobile-submenu">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="header2-mobile-item">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="header2-mobile-bottom">
+                        <a href="reservation.html" class="btn-default btn-highlighted">Reserve Table</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- HERO SECTION -->
+        <section class="hero2-section" id="hero2">
+            <!-- Video -->
+            <div class="hero2-video-wrap">
+                <video autoplay muted loop playsinline class="hero2-video">
+                    <source src="assets/images/hero-section.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero2-overlay-dark"></div>
+            <div class="hero2-overlay-gradient"></div>
+            <div class="hero2-grid-overlay"></div>
+            <div class="container">
+                <div class="row align-items-center hero2-row">
+                    <!-- Left Content -->
+                    <div class="col-lg-7">
+                        <div class="hero2-content" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="hero2-badge">
+                                <span class="hero2-badge-dot"></span>
+                                Signature Fine Dining Experience
+                            </span>
+                            <h1 class="hero2-title">
+                                Elevate Every <span class="hero2-outline-text">Flavor</span><br>
+                                Into A <span class="hero2-script">Luxury Story</span>
+                            </h1>
+                            <p class="hero2-desc">
+                                Welcome to Restrova — where cinematic ambiance, chef-crafted artistry,
+                                and unforgettable dining experiences blend into one extraordinary destination.
+                            </p>
+                            <div class="hero2-actions">
+                                <a href="menu.html" class="btn-default btn-highlighted">
+                                    Explore Signature Menu
+                                </a>
+                                <a href="reservation.html" class="hero2-btn-glass">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                    Book Private Table
+                                </a>
+                            </div>
+                            <div class="hero2-meta">
+                                <div class="hero2-meta-item">
+                                    <i class="fa-solid fa-award"></i>
+                                    <span>Luxury Dining</span>
+                                </div>
+                                <div class="hero2-meta-item">
+                                    <i class="fa-solid fa-fire-flame-curved"></i>
+                                    <span>Wood Fired Specialties</span>
+                                </div>
+                                <div class="hero2-meta-item">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5 Star Experience</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right side -->
+                    <div class="col-lg-5">
+                        <div class="hero2-ui-wrap" data-aos="zoom-in" data-aos-duration="1200">
+                            <div class="hero2-card hero2-card-special">
+                                <span class="hero2-card-tag">Chef’s Signature</span>
+                                <h4>Black Truffle Burrata Pizza</h4>
+                                <p>Stone-baked perfection layered with burrata, basil oil & truffle aroma.</p>
+                                <div class="hero2-card-bottom">
+                                    <span class="hero2-price">$29.00</span>
+                                    <span class="hero2-order-chip">Best Seller</span>
+                                </div>
+                            </div>
+                            <div class="hero2-card hero2-card-rating">
+                                <div class="hero2-rating-top">
+                                    <div class="hero2-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span>4.9 / 5</span>
+                                </div>
+                                <p>Trusted by 50,000+ happy guests worldwide.</p>
+                            </div>
+                            <div class="hero2-card hero2-card-delivery">
+                                <div class="hero2-delivery-box">
+                                    <div class="hero2-delivery-icon">
+                                        <i class="fa-solid fa-bag-shopping"></i>
+                                    </div>
+                                    <div>
+                                        <h6>Luxury Quick Delivery</h6>
+                                        <p>Freshly plated, packed & delivered with care.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stats -->
+                <div class="hero2-stats">
+                    <div class="hero2-stat-box">
+                        <h3>50K+</h3>
+                        <p>Happy Guests</p>
+                    </div>
+                    <div class="hero2-stat-box">
+                        <h3>120+</h3>
+                        <p>Curated Dishes</p>
+                    </div>
+                    <div class="hero2-stat-box">
+                        <h3>15+</h3>
+                        <p>Master Chefs</p>
+                    </div>
+                    <div class="hero2-stat-box">
+                        <h3>4.9★</h3>
+                        <p>Premium Rating</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Scroll Down -->
+            <a href="#" class="hero2-scroll">
+                <span></span>
+            </a>
+        </section>
+
+
+
+
+
+        <!-- FOOTER -->
+        <footer class="footer-modern mt-0">
+            <div class="footer-background">
+                <div class="footer-blob footer-blob-2"></div>
+                <div class="footer-blob footer-blob-3"></div>
+                <div class="footer-decorative-line"></div>
+            </div>
+            <div class="footer-wrapper">
+                <!-- Main Footer Content -->
+                <div class="footer-main">
+                    <div class="container">
+                        <div class="footer-grid">
+                            <!-- Brand Column -->
+                            <div class="footer-column footer-brand-column" data-aos="fade-up" data-aos-duration="700">
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="assets/images/logo.png" alt="Restrova">
+                                    </a>
+                                </div>
+                                <p class="footer-description">
+                                    Delivering premium culinary experiences with passion, quality ingredients, and
+                                    exceptional service.
+                                </p>
+                                <div class="footer-social-links">
+                                    <a href="#" class="social-link" aria-label="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="social-link" aria-label="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="social-link" aria-label="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-link" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Quick Links -->
+                            <div class="footer-column" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+                                <h5 class="footer-column-title">Quick Menu</h5>
+                                <ul class="footer-links">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="menu.html">Menu</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="reservations.html">Reservations</a></li>
+                                    <li><a href="events.html">Events</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                </ul>
+                            </div>
+                            <!-- Services -->
+                            <div class="footer-column" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
+                                <h5 class="footer-column-title">Our Services</h5>
+                                <ul class="footer-links">
+                                    <li><a href="contact.html">Delivery</a></li>
+                                    <li><a href="contact.html">Dine In</a></li>
+                                    <li><a href="contact.html">Takeaway</a></li>
+                                    <li><a href="contact.html">Catering</a></li>
+                                    <li><a href="contact.html">Gift Cards</a></li>
+                                    <li><a href="contact.html">Corporate</a></li>
+                                </ul>
+                            </div>
+                            <!-- Contact Information -->
+                            <div class="footer-column" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+                                <h5 class="footer-column-title">Contact Us</h5>
+                                <div class="contact-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <div>
+                                            <p>Beverley Rd, Brooklyn</p>
+                                            <p>New York 11226, USA</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-phone"></i>
+                                        <p>+00 (99) 939 7777</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <p>hello@restrova.com</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-clock"></i>
+                                        <p>Mon-Sat: 9am - 10pm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer Divider -->
+                        <div class="horizontal-pulse"></div>
+                        <!-- Footer Bottom -->
+                        <div class="footer-bottom" data-aos="fade-up" data-aos-delay="400" data-aos-duration="700">
+                            <div class="footer-bottom-content">
+                                <p class="copyright-text">
+                                    &copy; 2026 Restrova. All Rights Reserved.
+                                    <span class="divider">|</span>
+                                    <a href="#">Privacy Policy</a>
+                                    <span class="divider">|</span>
+                                    <a href="#">Terms & Conditions</a>
+                                </p>
+                                <div class="payment-methods">
+                                    <span class="payment-label">We Accept:</span>
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    <i class="fab fa-cc-paypal"></i>
+                                    <i class="fab fa-cc-amex"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Scroll to Top Button -->
+            <button class="footer-scroll-top" id="footerScrollTop" aria-label="Scroll to top">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </footer>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/fancybox.umd.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

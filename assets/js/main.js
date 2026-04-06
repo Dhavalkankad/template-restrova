@@ -79,11 +79,14 @@ document.querySelectorAll('.has-dropdown > .nav-link').forEach(function (link) {
     });
 });
 // Close mobile menu dropdowns when menu collapses
-document.getElementById('menu').addEventListener('hide.bs.collapse', function () {
-    document.querySelectorAll('.has-dropdown.mobile-open').forEach(function (el) {
-        el.classList.remove('mobile-open');
+const menuCollapse = document.getElementById('menu');
+if (menuCollapse) {
+    menuCollapse.addEventListener('hide.bs.collapse', function () {
+        document.querySelectorAll('.has-dropdown.mobile-open').forEach(function (el) {
+            el.classList.remove('mobile-open');
+        });
     });
-});
+}
 // Scroll to Top Button
 const scrollTopBtn = document.getElementById('footerScrollTop');
 window.addEventListener('scroll', () => {
@@ -560,3 +563,99 @@ function goStep(n) {
         if (listViewBtn) listViewBtn.classList.toggle('on', view === 'list');
     };
 })();
+
+/********* GALLERY FANCYBOX ***********/
+document.addEventListener("DOMContentLoaded", function () {
+    if (document.querySelector('[data-fancybox="gallery"]')) {
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            Toolbar: {
+                display: [
+                    "zoom",
+                    "slideshow",
+                    "fullscreen",
+                    "close"
+                ]
+            },
+            Thumbs: {
+                autoStart: true
+            }
+        });
+    }
+});
+
+/********* HOMEPAGE 2 ***********/
+document.addEventListener("DOMContentLoaded", function () {
+    const header2 = document.getElementById("header2");
+    const header2Toggle = document.getElementById("header2Toggle");
+    const header2MobileMenu = document.getElementById("header2MobileMenu");
+    const header2MobileOverlay = document.getElementById("header2MobileOverlay");
+    const header2MobileClose = document.getElementById("header2MobileClose");
+    if (header2) {
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 30) {
+                header2.classList.add("scrolled");
+            } else {
+                header2.classList.remove("scrolled");
+            }
+        });
+    }
+    // Open Mobile Menu
+    function openMobileMenu() {
+        if (header2Toggle) header2Toggle.classList.add("active");
+        if (header2MobileMenu) header2MobileMenu.classList.add("active");
+        if (header2MobileOverlay) header2MobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+    // Close Mobile Menu
+    function closeMobileMenu() {
+        if (header2Toggle) header2Toggle.classList.remove("active");
+        if (header2MobileMenu) header2MobileMenu.classList.remove("active");
+        if (header2MobileOverlay) header2MobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+    if (header2Toggle) {
+        header2Toggle.addEventListener("click", function () {
+            if (header2MobileMenu && header2MobileMenu.classList.contains("active")) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+    }
+    if (header2MobileClose) {
+        header2MobileClose.addEventListener("click", closeMobileMenu);
+    }
+    if (header2MobileOverlay) {
+        header2MobileOverlay.addEventListener("click", closeMobileMenu);
+    }
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 991) {
+            closeMobileMenu();
+        }
+    });
+    // Mobile Submenu Toggle
+    const submenuParents = document.querySelectorAll(".header2-mobile-has-submenu");
+    submenuParents.forEach(function (item) {
+        const toggleBtn = item.querySelector(".header2-mobile-submenu-toggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                // close others (accordion style)
+                submenuParents.forEach(function (otherItem) {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove("active");
+                    }
+                });
+                item.classList.toggle("active");
+            });
+        }
+    });
+    const mobileLinks = document.querySelectorAll(".header2-mobile-menu a");
+    mobileLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            if (!link.closest(".header2-mobile-link-wrap")) {
+                closeMobileMenu();
+            }
+        });
+    });
+});
