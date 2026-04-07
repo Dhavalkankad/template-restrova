@@ -316,10 +316,10 @@ document.querySelectorAll('.filter-btn').forEach(function (btn) {
 
     function maxPage() { return Math.ceil(total / perView()); }
 
-    /* Set pixel width on each card from real container size */
     function setCardWidths() {
         var pv = perView();
-        var cardW = (wrap.offsetWidth - GAP * (pv - 1)) / pv;
+        var availableWidth = wrap.offsetWidth - 20;
+        var cardW = (availableWidth - GAP * (pv - 1)) / pv;
         cards.forEach(function (c) { c.style.width = cardW + 'px'; });
     }
 
