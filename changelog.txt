@@ -1,0 +1,8 @@
+Version 1.0 – Initial Release
+--------------------------------
+
+- Initial release of Restrova HTML template
+- Built with Bootstrap 5
+- Fully responsive layout
+- Restaurant & Food Delivery design
+- Includes multiple pages and inner layouts

@@ -5363,27 +5363,18 @@ Category Section
     opacity: .12;
 }
 
-.cp-left__wash {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse 90% 70% at 0% 0%, rgba(255, 88, 27, .28) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 70% at 100% 100%, rgba(255, 88, 27, .15) 0%, transparent 55%);
-    pointer-events: none;
-}
-
 .cp-left__bignum {
     position: absolute;
     font-family: var(--heading-font);
-    font-size: 320px;
+    font-size: 150px;
     font-weight: 900;
     color: rgba(255, 255, 255, .03);
     line-height: 1;
-    right: -40px;
-    bottom: -40px;
+    right: 0px;
+    bottom: -25px;
     pointer-events: none;
     user-select: none;
-    letter-spacing: -20px;
+    letter-spacing: 0px;
 }
 
 .cp-left__ring {
@@ -15909,10 +15900,10 @@ Category Section
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    border: 1.5px solid rgba(255, 255, 255, .1);
+    border: 1.5px solid var(--base-color);
     background: transparent;
     font-size: 15px;
-    color: rgba(255, 255, 255, .4);
+    color: var(--base-color);
     display: grid;
     place-items: center;
     transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -16062,12 +16053,7 @@ Category Section
     will-change: transform, filter;
 }
 
-.m-item:hover img {
-    transform: scale(1.09);
-    filter: brightness(.95) saturate(1.15)
-}
-
-.m-item::after {
+.m-item img::after {
     content: '';
     position: absolute;
     width: 200%;
@@ -16078,11 +16064,17 @@ Category Section
     transform: translate(-50%, -50%) rotate(-45deg);
     pointer-events: none;
     z-index: 5;
-    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1), background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: height, background;
 }
 
-.m-item:hover::after {
+.m-item:hover img {
+    transform: scale(1.09);
+    filter: brightness(.95) saturate(1.15)
+}
+
+.m-item:hover img::after {
     height: 250%;
     background: transparent;
 }

@@ -1362,6 +1362,45 @@
         opacity: 0.3;
     }
 
+    .menu-hero-ghost {
+        font-size: 130px;
+        letter-spacing: -4px;
+    }
+
+    .dish-card.c1 {
+        width: 170px;
+        height: 215px;
+    }
+
+    .menu-hero-float {
+        padding: 8px 12px;
+        gap: 7px;
+        top: -5px;
+        right: 0;
+    }
+
+    .dish-card.c2 {
+        width: 135px;
+        height: 165px;
+        bottom: 5px;
+    }
+
+    .dish-card.c3 {
+        width: 135px;
+        height: 165px;
+        bottom: 20px;
+    }
+
+    .menu-hero-visual {
+        height: 320px;
+        width: 300px;
+    }
+
+    .menu-hero-left .menu-hero-h1 {
+        font-size: 80px;
+        line-height: 1;
+    }
+
     /* =========================
        HOMEPAGE 2
      ========================= */
